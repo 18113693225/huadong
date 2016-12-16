@@ -237,7 +237,6 @@ public class PowerRunXSKActivity extends BaseActivity {
         CustomeEditText2 cdname = (CustomeEditText2) child.findViewById(R.id.pr_new_dname);
         cdname.setId(View.generateViewId());
         Button pz = (Button) child.findViewById(R.id.poto_pz);
-        final int btId = commonLayout.indexOfChild(child);
         pz.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -245,6 +244,7 @@ public class PowerRunXSKActivity extends BaseActivity {
                 if (xiangmu == "" || leibie == "") {
                     Toast.makeText(PowerRunXSKActivity.this, "请选择项目或者类别", Toast.LENGTH_LONG).show();
                 } else {
+                    int btId = commonLayout.indexOfChild(child);
                     Intent newIntent = new Intent(PowerRunXSKActivity.this, PublishActivity.class);
                     newIntent.putExtra("btId", btId);
                     startActivity(newIntent);
@@ -273,7 +273,8 @@ public class PowerRunXSKActivity extends BaseActivity {
         bt.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (LBs.size() < btId) {
+                int btId = commonLayout.indexOfChild(child);
+                if (LBs.size() < btId + 1) {
                     Toast.makeText(PowerRunXSKActivity.this, "请先选择设备", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
