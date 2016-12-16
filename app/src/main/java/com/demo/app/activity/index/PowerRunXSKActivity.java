@@ -83,6 +83,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         TitleCommon.setGpsTitle(this);
         xiangmu = "";
         leibie = "";
+        LBs.clear();
         Constents.xskcontentList.clear();
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
@@ -275,13 +276,14 @@ public class PowerRunXSKActivity extends BaseActivity {
                 if (LBs.size() < btId) {
                     Toast.makeText(PowerRunXSKActivity.this, "请先选择设备", Toast.LENGTH_SHORT).show();
                     return;
+                } else {
+                    Intent i = new Intent();
+                    i.putExtra("did", xiangmu);
+                    i.putExtra("type", LBs.get(btId));
+                    i.setClass(PowerRunXSKActivity.this, DXSBXSKContentListActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    PowerRunXSKActivity.this.startActivity(i);
                 }
-                Intent i = new Intent();
-                i.putExtra("did", xiangmu);
-                i.putExtra("type", LBs.get(btId));
-                i.setClass(PowerRunXSKActivity.this, DXSBXSKContentListActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                PowerRunXSKActivity.this.startActivity(i);
             }
         });
         commonLayout.addView(child);
