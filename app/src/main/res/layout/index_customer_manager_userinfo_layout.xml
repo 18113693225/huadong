@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_userinfo_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:button_text="@string/pr_rdeline_project_select"
+                CustomAttrs:chint2="自动关联"
+                CustomAttrs:show_Button="true"
+                CustomAttrs:t_text2="@string/pr_rdeline_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_userinfo_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="自动关联"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:t_text2="@string/pr_rdeline_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_userinfo_recordperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="自动关联"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:t_text2="@string/pr_month_recordperson" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_userinfo_workcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="textMultiLine"
+                CustomAttrs:edit_maxline="7"
+                CustomAttrs:edit_minline="5"
+                CustomAttrs:edit_singleline="false"
+                CustomAttrs:t_text2="@string/cm_userinfo_workcontent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/cm_userinfo_workservice" />
+
+                <com.demo.app.view.CustomeRadioGroup
+                    android:id="@+id/cm_userinfo_serviceGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_serviceOKBtn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="非常满意" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_serviceOK1Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="满意" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_serviceOK2Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="一般" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_serviceOK3Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="不满意" />
+                </com.demo.app.view.CustomeRadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/cm_userinfo_worklevel" />
+
+                <com.demo.app.view.CustomeRadioGroup
+                    android:id="@+id/cm_userinfo_levelGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_levelGroupOKBtn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="非常满意" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_levelGroupOK1Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="满意" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_levelGroupOK2Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="一般" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_levelGroupOK3Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="不满意" />
+                </com.demo.app.view.CustomeRadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/cm_userinfo_worksafety" />
+
+                <com.demo.app.view.CustomeRadioGroup
+                    android:id="@+id/cm_userinfo_safetyGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_safetyGroupOKBtn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="非常满意" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_safetyGroupOK1Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="满意" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_safetyGroupOK2Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="一般" />
+
+                    <RadioButton
+                        android:id="@+id/cm_userinfo_safetyGroupOK3Btn"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@null"
+                        android:drawablePadding="7dp"
+                        android:drawableRight="@drawable/radiobox"
+                        android:paddingLeft="10dp"
+                        android:text="不满意" />
+                </com.demo.app.view.CustomeRadioGroup>
+            </LinearLayout>
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_userinfo_workComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="textMultiLine"
+                CustomAttrs:edit_maxline="7"
+                CustomAttrs:edit_minline="5"
+                CustomAttrs:edit_singleline="false"
+                CustomAttrs:t_text2="@string/cm_userinfo_workComment" />
+
+            <Button
+                android:id="@+id/cm_userinfo_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/cm_powerconn_bottom"
+                android:textColor="@color/table_end" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

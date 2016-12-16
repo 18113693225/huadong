@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_pname" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_runit" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_rperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_rperson" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_num" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_worknum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_worknum" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_workname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_workname" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_fzr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_fzr" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_qfz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_qfz" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_start" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/tt_w_show_end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/tt_w_new_end" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/edit_work_tables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_franchise_shape"
+            android:drawableLeft="@drawable/icon_reedit"
+            android:text="重新编辑"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/delete_work_tables"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_franchise_shape1"
+            android:drawableLeft="@drawable/icon_del"
+            android:text="删除表单"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

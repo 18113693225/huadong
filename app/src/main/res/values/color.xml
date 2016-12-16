@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="darkgray">#808080</color>
+    <color name="gray">#FF888888</color>
+    <color name="gray2">#FF8F8F8F</color>
+    <color name="back_gray_2">#d9dadb</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00FF00</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#0000</color>
+    <color name="half_transparent">#7000</color>
+    <color name="transparent_white_40">#6FFF</color>
+    <color name="transparent_white_50">#7FFF</color>
+    <color name="transparent_white_80">#DFFF</color>
+    <color name="transparent_black_50">#7000</color>
+    <color name="transparent_black_80">#D000</color>
+    <color name="transparent_1f2021_80">#DD1f2021</color>
+    <color name="updateText">#2894e6</color>
+    <color name="light_gray">#99a4b7</color>
+    <color name="deep_gray">#394257</color>
+    <color name="border_gray">#d9dfe5</color>
+    <color name="bg_gray">#e1e1e1</color>
+    <color name="btn_gray">#d1d1d1</color>
+    <color name="glass_gall">#c2ebef</color>
+    <color name="light_blue">#87d0f2</color>
+
+    <color name="login_text">#404040</color>
+    <color name="login_bg">#00715d</color>
+    <color name="tab_hover_bg">#1d2123</color>
+    <color name="text_input_color">#989fa9</color>
+    <color name="text_electri_color">#000000</color>
+    <color name="bt_franchise_bg">#f0f2f5</color>
+    <color name="table_end">#ff8200</color>
+    <color name="line">#353839</color>
+    <color name="test">#FCFCFC</color>
+</resources>

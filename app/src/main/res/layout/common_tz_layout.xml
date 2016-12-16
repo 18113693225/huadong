@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_aqtool" >
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_zichangnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_tz_zichangnum"
+        android:tag="dm_tz_zichangnum" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_zichangname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_tz_zichangname"
+        android:tag="dm_tz_zichangname" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_guigemodel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_tz_guigemodel"
+        android:tag="dm_tz_guigemodel" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_scfactory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_tz_scfactory"
+        android:tag="dm_tz_scfactory" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_sctime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image_date="true"
+        CustomAttrs:t_text2="@string/dm_tz_sctime"
+        android:tag="dm_tz_sctime" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_slnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_tz_slnum"
+        android:tag="dm_tz_slnum" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_tz_trytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image_date="true"
+        CustomAttrs:t_text2="@string/dm_tz_trytime"
+        android:tag="dm_tz_trytime" />
+
+    <EditText
+        android:id="@+id/dm_tz_bz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/icon_rounded_rectangle"
+        android:gravity="top"
+        android:hint="@string/dm_aqtool_bzcontent"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:minLines="3"
+        android:paddingLeft="8dp"
+        android:scrollbars="vertical"
+        android:tag="dm_tz_bz"
+        android:textSize="14sp" >
+    </EditText>
+
+</LinearLayout>

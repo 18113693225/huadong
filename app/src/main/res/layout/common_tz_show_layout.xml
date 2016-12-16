@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_bpbj_show" >
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_zichangnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_zichangnum" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_zichangname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_zichangname" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_guigemodel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_guigemodel" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_scfactory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_scfactory" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_sctime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_sctime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_slnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_slnum" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_trytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_tz_trytime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_tz_show_bz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="备注：" />
+
+</LinearLayout>

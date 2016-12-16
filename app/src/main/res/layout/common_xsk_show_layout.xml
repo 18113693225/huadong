@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_xsk_show" >
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_xsk_show_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_new_dname" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_xsk_show_dnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_show_dnum" />
+
+    <Button
+        android:id="@+id/pr_xsk_show_xscontent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_franchise_shape"
+        android:drawableRight="@drawable/icon_arrow_right"
+        android:gravity="center"
+        android:text="@string/pr_show_xscontent"
+        android:textStyle="bold" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_xsk_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_show_result" />
+    
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_xsk_show_qx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="缺陷类别：" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_xsk_show_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_show_log" />
+
+</LinearLayout>

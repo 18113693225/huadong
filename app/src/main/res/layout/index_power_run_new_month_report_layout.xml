@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_image="true"
+                CustomAttrs:t_text2="@string/pr_month_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_month_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_recordperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_month_recordperson" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_aqyxts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_aqyxts"
+                CustomAttrs:unit_text="天" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_bydzcz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_bydzcz"
+                CustomAttrs:unit_text="次" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_byqzdl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_byqzdl"
+                CustomAttrs:unit_text="kWh" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_zysbzgfh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_month_zysbzgfh" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_qzxs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_qzxs"
+                CustomAttrs:unit_text="次" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_sbdqsyqh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_sbdqsyqh"
+                CustomAttrs:unit_text="次" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_byqfjt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_byqfjt"
+                CustomAttrs:unit_text="次" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_qzdzhd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="number"
+                CustomAttrs:show_unit="true"
+                CustomAttrs:t_text2="@string/pr_month_qzdzhd"
+                CustomAttrs:unit_text="次" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_byzysb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="textMultiLine"
+                CustomAttrs:edit_maxline="7"
+                CustomAttrs:edit_minline="5"
+                CustomAttrs:edit_singleline="false"
+                CustomAttrs:t_text2="@string/pr_month_byzysb" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_month_fxcl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="textMultiLine"
+                CustomAttrs:edit_maxline="7"
+                CustomAttrs:edit_minline="5"
+                CustomAttrs:edit_singleline="false"
+                CustomAttrs:t_text2="@string/pr_month_fxcl" />
+
+            <Button
+                android:id="@+id/pr_month_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/pr_month_end"
+                android:textColor="@color/table_end" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

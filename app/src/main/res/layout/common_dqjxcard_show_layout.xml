@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_redline_show" >
+    
+    
+    
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_starttime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        CustomAttrs:drawable_l_text="@drawable/icon_time"
+        CustomAttrs:name_text="工作开始时间：" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_worknum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pf_dqjx_jxContent" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_jxtype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pf_dqjx_jxtype" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_workendtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pf_dqjx_workendtime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        CustomAttrs:name_text="@string/pr_show_result" />
+
+    <!-- <com.demo.app.view.CustomeTextView -->
+    <!-- android:id="@+id/pr_rdeline_show_qx" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- CustomAttrs:name_text="缺陷类别：" /> -->
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_workfzr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pf_dqjx_workfzr" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pf_dqjx_show_bz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="检修结果：" />
+
+</LinearLayout>

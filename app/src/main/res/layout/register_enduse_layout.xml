@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/endUser_linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- <LinearLayout -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_margin="5dp" -->
+        <!-- android:orientation="vertical" > -->
+
+        <TableLayout
+            android:id="@+id/endUser_tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:shrinkColumns="0,1,2" >
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_name" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/endUser_companyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的公司名称" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/franchise_cp_person" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/endUser_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的姓名" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="执照编号" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/endUser_zhizhaonum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:chint="请输入您的执照编号" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <!-- <TableRow android:layout_marginTop="5dp" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="left|center" -->
+            <!-- android:text="@string/enduse_company_phone" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeEditText -->
+            <!-- android:id="@+id/endUser_contactType" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="5dp" -->
+            <!-- android:layout_span="2" -->
+            <!-- CustomAttrs:allow_null="false" -->
+            <!-- CustomAttrs:chint="请输入您的联系方式" -->
+            <!-- CustomAttrs:edit_inputtype1="number" > -->
+            <!-- </com.demo.app.view.CustomeEditText> -->
+            <!-- </TableRow> -->
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_addr" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/endUser_companyAddr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的公司地址" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="type" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_type" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_bdc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="type"
+                    android:text="变电厂" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_hdc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="type"
+                    android:text="火电厂" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="type" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_sdc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="3"
+                    android:tag="type"
+                    android:text="水电站" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_fd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="4"
+                    android:tag="type"
+                    android:text="风电" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_tyn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="5"
+                    android:tag="type"
+                    android:text="太阳能" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="type" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_sdxl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="6"
+                    android:tag="type"
+                    android:text="输电线路" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_dldl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="7"
+                    android:tag="type"
+                    android:text="电力电缆" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/type_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="8"
+                    android:tag="type"
+                    android:text="其它" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="level" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_level" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_half"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="level"
+                    android:text="0.5KV" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="level"
+                    android:text="10KV" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="level" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_thirty_five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="3"
+                    android:tag="level"
+                    android:text="35KV" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_sixty_six"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="4"
+                    android:tag="level"
+                    android:text="66KV" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_one_ten"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="5"
+                    android:tag="level"
+                    android:text="110KV" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="level" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_two_twinty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="6"
+                    android:tag="level"
+                    android:text="220KV" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_three_thirty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="7"
+                    android:tag="level"
+                    android:text="330KV" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/level_five_zero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="8"
+                    android:tag="level"
+                    android:text="500KV" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_gm" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/endUser_guimo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入规模/容量"
+                    CustomAttrs:edit_inputtype1="number" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_length" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/endUser_tailength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入台数/长度"
+                    CustomAttrs:edit_inputtype1="number" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="ct" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_ct" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/ct_fdc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="ct"
+                    android:text="房地产" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/ct_gy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="ct"
+                    android:text="工业" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="ct" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/ct_ny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="3"
+                    android:tag="ct"
+                    android:text="能源" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/ct_jt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="4"
+                    android:tag="ct"
+                    android:text="交通" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/ct_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="5"
+                    android:singleLine="true"
+                    android:tag="ct"
+					android:text="其它" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="coper" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_coper" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/coper_yx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="coper"
+                    android:text="运行" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/coper_jx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="coper"
+                    android:text="检修" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="coper" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/coper_ts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="3"
+                    android:tag="coper"
+                    android:text="调试" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/coper_jg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="4"
+                    android:tag="coper"
+                    android:text="技改" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/coper_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="5"
+                    android:singleLine="true"
+                    android:tag="coper"
+                    android:text="其它" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <!-- <TableRow android:layout_marginTop="5dp" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="left|center" -->
+            <!-- android:text="@string/enduse_company_pw" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeEditText -->
+            <!-- android:id="@+id/endUser_password" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="5dp" -->
+            <!-- android:layout_span="2" -->
+            <!-- CustomAttrs:allow_null="false" -->
+            <!-- CustomAttrs:chint="请输入您的登陆密码" > -->
+            <!-- </com.demo.app.view.CustomeEditText> -->
+            <!-- </TableRow> -->
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <CheckBox
+                    android:id="@+id/userProtocolEuCheckbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userProtocolEuTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="使用电力物业并同意电力物业平台的用户服务协议"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <Button
+                android:id="@+id/endUser_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_login_shape"
+                android:text="注册" />
+
+            <TextView
+                android:id="@+id/endUser_exist_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="已有账号？点此登陆"
+                android:textSize="12sp" />
+        </TableLayout>
+        <!-- </LinearLayout> -->
+    </ScrollView>
+
+</LinearLayout>

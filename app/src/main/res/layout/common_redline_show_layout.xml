@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_redline_show" >
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_redline_show_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_new_dname" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_redline_show_dnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_show_dnum" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:tag="pr_rdeline_cwwd"
+        android:text="@string/pr_rdeline_cwwd" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_show_ax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_rdeline_ax" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_show_bx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_rdeline_bx" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_show_cx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_rdeline_cx" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_show_result" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_show_qx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="缺陷类别：" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_show_bz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="备注：" />
+
+</LinearLayout>

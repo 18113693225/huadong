@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_prxskcard">
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_new_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="pr_new_dname"
+        CustomAttrs:button_text="@string/pr_new_dname_select"
+        CustomAttrs:show_Button="true"
+        CustomAttrs:t_text2="@string/pr_new_dname" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_new_dnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="pr_new_dnum"
+        CustomAttrs:button_text="@string/pr_new_show_xslr"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_Button="true"
+        CustomAttrs:t_text2="@string/pr_new_dnum" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:tag="pr_xsk_radioLinear">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="巡视结果：" />
+
+        <RadioGroup
+            android:id="@+id/pr_new_radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:tag="pr_new_radioGroup">
+
+            <RadioButton
+                android:id="@+id/pr_new_normalButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="正常" />
+
+            <RadioButton
+                android:id="@+id/pr_new_exceptionButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="异常" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pr_new_qxradioLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:tag="pr_new_qxradioLinear"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="缺陷类别：" />
+
+        <RadioGroup
+            android:id="@+id/pr_new_qxradioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:tag="pr_rdeline_qxradioGroup">
+
+            <RadioButton
+                android:id="@+id/pr_new_qxwjButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="危机缺陷" />
+
+            <RadioButton
+                android:id="@+id/pr_new_qxzdButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重大缺陷" />
+
+            <RadioButton
+                android:id="@+id/pr_new_qxybButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一般缺陷" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/poto_pz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_exit_shape"
+        android:padding="8dp"
+        android:tag="pr_new_photos"
+        android:text="上传图片"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/pr_new_xsbz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/icon_rounded_rectangle"
+        android:gravity="top"
+        android:hint="@string/sc_hj_bz"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:minLines="3"
+        android:paddingLeft="8dp"
+        android:scrollbars="vertical"
+        android:tag="pr_new_xsbz"
+        android:textSize="14sp"></EditText>
+
+</LinearLayout>

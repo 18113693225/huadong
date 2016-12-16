@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_new_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:show_image="true"
+                CustomAttrs:chint2="@string/pr_new_pname_hint"
+                CustomAttrs:t_text2="@string/pr_new_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_new_ptype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:button_text="@string/pr_new_ptype_select"
+                CustomAttrs:t_text2="@string/pr_new_ptype" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_new_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_runit_hint"
+                CustomAttrs:t_text2="@string/pr_new_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_new_xsr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                 CustomAttrs:edit_inputtype3="number"
+                CustomAttrs:chint2="@string/pr_new_xsr_hint"
+                CustomAttrs:t_text2="@string/pr_new_xsr" />
+
+            <LinearLayout
+                android:id="@+id/pr_xsk_commonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+            </LinearLayout>
+            <!-- start -->
+           <!--  <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_new_dname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:button_text="@string/pr_new_dname_select"
+                CustomAttrs:show_Button="true"
+                CustomAttrs:t_text2="@string/pr_new_dname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pr_new_dnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:button_text="@string/pr_new_show_xslr"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_Button="true"
+                CustomAttrs:t_text2="@string/pr_new_dnum" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="巡视结果：" />
+
+                <RadioGroup
+                    android:id="@+id/pr_new_radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/pr_new_normalButton"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="15dp"
+                        android:text="正常" />
+
+                    <RadioButton
+                        android:id="@+id/pr_new_exceptionButton"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="异常" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/pr_new_xsbz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/icon_rounded_rectangle"
+                android:gravity="top"
+                android:hint="请输入设备巡视备注"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minLines="3"
+                android:paddingLeft="8dp"
+                android:scrollbars="vertical"
+                android:textSize="14sp" >
+            </EditText> -->
+<!-- end-->
+            <TextView
+                android:id="@+id/pr_new_addDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center|left"
+                android:background="@drawable/icon_rounded_rectangle"
+                android:drawableLeft="@drawable/icon_file_plus"
+                android:paddingLeft="10dp"
+                android:text="添加设备" />
+
+            <Button
+                android:id="@+id/pr_new_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textColor="@color/table_end"
+                android:text="确认保存后可在&apos;我&apos;的工作管理中查看" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_pr_jx_redlinecard" >
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_jx_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_rdeline_device_select"
+        CustomAttrs:readonly="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_dname"
+        android:tag="pr_rdeline_dname" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_jx_dnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/pr_new_dnum"
+        android:tag="pr_rdeline_dnum" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:tag="pr_rdeline_cwwd"
+        android:text="@string/pr_rdeline_cwwd" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_jx_ax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:readonly="true"
+        CustomAttrs:show_unit="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_ax"
+        CustomAttrs:unit_text="℃"
+        android:tag="pr_rdeline_ax" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_jx_bx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:readonly="true"
+        CustomAttrs:show_unit="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_bx"
+        CustomAttrs:unit_text="℃"
+        android:tag="pr_rdeline_bx" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_jx_cx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:readonly="true"
+        CustomAttrs:show_unit="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_cx"
+        CustomAttrs:unit_text="℃"
+        android:tag="pr_rdeline_cx" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_rdeline_jx_qx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="缺陷类别："
+        CustomAttrs:readonly="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="检修结果：" />
+
+        <RadioButton
+            android:id="@+id/pr_rdeline_jx_isok"
+            style="@style/CustomRadioboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="合格" />
+    </LinearLayout>
+
+</LinearLayout>

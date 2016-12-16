@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_bpbj_show" >
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_new_dname" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_guige"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_bpbj_guige" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_rukunum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_bpbj_rukunum" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_rukutime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_bpbj_rukutime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_chukunum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_bpbj_chukunum" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_chukutime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_bpbj_chukutime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_bpbj_show_kuchunyuer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_bpbj_kuchunyuer" />
+
+</LinearLayout>

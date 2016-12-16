@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomEditTextAttrs">
+        <attr name="chint" format="string" />
+        <attr name="allow_null" format="boolean" />
+        <attr name="edit_inputtype1" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomEditText2Attrs">
+        <attr name="chint2" format="string" />
+        <attr name="t_text2" format="string" />
+        <attr name="show_image" format="boolean" />
+        <attr name="show_image_date" format="boolean" />
+        <attr name="show_Button" format="boolean" />
+        <attr name="show_unit" format="boolean" />
+        <attr name="unit_text" format="string" />
+        <attr name="button_text" format="string" />
+        <attr name="edit_singleline" format="boolean" />
+        <attr name="edit_maxline" format="integer" />
+        <attr name="edit_minline" format="integer" />
+        <attr name="edit_inputtype" format="string" />
+        <attr name="readonly" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CustomEditText3Attrs">
+        <attr name="chint3" format="string" />
+        <attr name="allow_null3" format="boolean" />
+        <attr name="edit_inputtype3" format="string" />
+        <attr name="t_text3" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomAttrsText3Attrs">
+        <attr name="name_text" format="string" />
+        <attr name="drawable_l_text" format="reference|integer"></attr>
+    </declare-styleable>
+    <declare-styleable name="CustomAttrsButton">
+        <attr name="selected" format="boolean" />
+        <attr name="button_value" format="string" />
+    </declare-styleable>
+    <declare-styleable name="CustomAttrsImageButton">
+        <attr name="text" format="string" />
+        <attr name="textSize" format="integer" />
+        <attr name="src" format="reference"></attr>
+        <attr name="orientation" format="string"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="AutoText">
+        <attr name="mytextSize" format="dimension" />
+        <attr name="mytextColor" format="reference|color" />
+        <attr name="lineSpacingExtra" format="dimension" />
+        <attr name="typeface" format="dimension" />
+    </declare-styleable>
+
+</resources>

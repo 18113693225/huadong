@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- <LinearLayout -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_margin="5dp" -->
+        <!-- android:orientation="vertical" > -->
+
+        <TableLayout
+            android:id="@+id/electrician_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:shrinkColumns="0,1,2" >
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/elec_name" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/electrician_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的姓名" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/enduse_company_phone" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/electrician_contactType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的联系电话"
+                    CustomAttrs:edit_inputtype1="number" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/elec_sex" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/sex_boy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="sex"
+                    android:text="男" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/sex_girl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="sex"
+                    android:text="女" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/elec_ID" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/electrician_ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入你的身份证号码" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="major" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/elec_major" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_manager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="major"
+                    android:text="项目经理" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="major"
+                    android:text="电气自动化" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="major" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="3"
+                    android:tag="major"
+                    android:text="一次安装" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="4"
+                    android:tag="major"
+                    android:text="二次安装" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_debug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="5"
+                    android:tag="major"
+                    android:text="电气调试" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="major" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="6"
+                    android:tag="major"
+                    android:text="继电保护" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_experment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="7"
+                    android:tag="major"
+                    android:text="高压试验" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_run"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="9"
+                    android:tag="major"
+                    android:text="运行" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="major" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_jx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="10"
+                    android:tag="major"
+                    android:text="检修" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="8"
+                    android:tag="major"
+                    android:text="其它" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/major_visibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:tag="major"
+                     CustomAttrs:button_value="11"
+                    android:visibility="invisible" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="book" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/elec_book" />
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_junior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    CustomAttrs:selected="true"
+                    android:tag="book"
+                    android:text="初级职称" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="2"
+                    android:tag="book"
+                    android:text="中级职称" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="book" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_senior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="3"
+                    android:tag="book"
+                    android:text="高级职称" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="4"
+                    android:tag="book"
+                    android:text="低压电工" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="5"
+                    android:tag="book"
+                    android:text="高压电工" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="5dp"
+                android:tag="book" >
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_specil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="6"
+                    android:tag="book"
+                    android:text="特种作业证" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_project"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="7"
+                    android:tag="book"
+                    android:text="继电保护" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:id="@+id/book_others"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="8"
+                    android:tag="book"
+                    android:text="其它" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="证件编号：" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/electrician_certificateID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:chint="请输入您的证件编号" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <!-- <TableRow android:layout_marginTop="5dp" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="left|center" -->
+            <!-- android:text="@string/elec_pw" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeEditText -->
+            <!-- android:id="@+id/electrician_password" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="5dp" -->
+            <!-- android:layout_span="2" -->
+            <!-- CustomAttrs:allow_null="false" -->
+            <!-- CustomAttrs:chint="请输入您的登陆密码" > -->
+            <!-- </com.demo.app.view.CustomeEditText> -->
+            <!-- </TableRow> -->
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <CheckBox
+                    android:id="@+id/userProtocolCheckbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userProtocolTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_span="2"
+                    android:text="使用电力物业并同意电力物业平台的用户服务协议"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <Button
+                android:id="@+id/electrician_regist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_login_shape"
+                android:clickable="false"
+                android:text="注册" />
+
+            <TextView
+                android:id="@+id/electrician_exist_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="已有账号？点此登陆"
+                android:textSize="12sp" />
+        </TableLayout>
+        <!-- </LinearLayout> -->
+    </ScrollView>
+
+</LinearLayout>

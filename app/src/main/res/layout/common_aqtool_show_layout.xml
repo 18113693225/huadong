@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_aqtool_show" >
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/pr_new_dname" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_devicenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_devicenum" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_tooldesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_tooldesc" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_model" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_dylevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_dylevel" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_slnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_slnum" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_sytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_sytime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="试验结果：" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_nextsytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="@string/dm_aqtool_nextsytime" />
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/dm_aqtool_show_bz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="备注：" />
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.6"
+        android:orientation="vertical" >
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/search_viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" >
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/pageNumLiner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|bottom"
+            android:gravity="right|bottom"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/show_jx_task_linear"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/test"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp" >
+
+            <LinearLayout
+                android:id="@+id/gifLinearLayout"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="50dp"
+                android:layout_height="50dp" >
+                <ImageView
+                    android:id="@+id/show_jx_task_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_check_task" />
+
+                <WebView
+                    android:id="@+id/gifWebView"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/show_jx_task_textnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:text="查看检修任务"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/oper_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:src="@drawable/icon_arrow_right" >
+        </ImageView>
+    </LinearLayout>
+
+    <com.demo.app.view.CustomeGridView
+        android:id="@+id/indexGridView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:listSelector="@null"
+        android:numColumns="3"
+        android:stretchMode="columnWidth" >
+    </com.demo.app.view.CustomeGridView>
+
+</LinearLayout>

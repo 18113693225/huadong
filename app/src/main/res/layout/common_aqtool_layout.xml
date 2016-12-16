@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_aqtool">
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_dname"
+        CustomAttrs:button_text="@string/pr_new_dname_select"
+        CustomAttrs:show_Button="true"
+        CustomAttrs:t_text2="@string/pr_new_dname" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_devicenum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_devicenum"
+        CustomAttrs:button_text="@string/dm_aqtool_deviceselect"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_aqtool_devicenum" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_tooldesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_tooldesc"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image="true"
+        CustomAttrs:t_text2="@string/dm_aqtool_tooldesc" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_model"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_aqtool_model" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_dylevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_dylevel"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image="true"
+        CustomAttrs:t_text2="@string/dm_aqtool_dylevel" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_slnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_slnum"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_aqtool_slnum" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_sytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_sytime"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image_date="true"
+        CustomAttrs:t_text2="@string/dm_aqtool_sytime" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:tag="dm_aqtool_radioLinear">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/dm_aqtool_syresult" />
+
+        <RadioGroup
+            android:id="@+id/dm_aqtool_radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:tag="dm_aqtool_radioGroup">
+
+            <RadioButton
+                android:id="@+id/dm_aqtool_okButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="合格" />
+
+            <RadioButton
+                android:id="@+id/dm_aqtool_notOkButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="不合格" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_aqtool_nextsytime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="dm_aqtool_nextsytime"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image_date="true"
+        CustomAttrs:t_text2="@string/dm_aqtool_nextsytime" />
+
+    <EditText
+        android:id="@+id/dm_aqtool_bz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/icon_rounded_rectangle"
+        android:gravity="top"
+        android:hint="@string/dm_aqtool_bzcontent"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:minLines="3"
+        android:paddingLeft="8dp"
+        android:scrollbars="vertical"
+        android:tag="dm_aqtool_bz"
+        android:textSize="14sp"></EditText>
+
+</LinearLayout>

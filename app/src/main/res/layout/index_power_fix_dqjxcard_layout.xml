@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pf_dqjx_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:show_image="true"
+                CustomAttrs:t_text2="@string/pr_rdeline_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pf_dqjx_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_rdeline_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pf_dqjx_jxperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pf_dqjx_jxperson" />
+
+            <LinearLayout
+                android:id="@+id/pf_dqjx_commonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+<!--                 <include layout="@layout/common_dqjxcard_layout" /> -->
+            </LinearLayout>
+            <!-- 重复开始 -->
+            <!-- <com.demo.app.view.CustomeEditText2 -->
+            <!-- android:id="@+id/pf_dqjx_worknum" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:chint2="@string/pr_new_dnum_hint" -->
+            <!-- CustomAttrs:t_text2="@string/pf_dqjx_worknum" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeEditText2 -->
+            <!-- android:id="@+id/pf_dqjx_jxtype" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:chint2="@string/pr_new_dnum_hint" -->
+            <!-- CustomAttrs:show_image="true" -->
+            <!-- CustomAttrs:t_text2="@string/pf_dqjx_jxtype" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeEditText2 -->
+            <!-- android:id="@+id/pf_dqjx_workendtime" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:chint2="@string/pr_new_dnum_hint" -->
+            <!-- CustomAttrs:show_image_date ="true" -->
+            <!-- CustomAttrs:t_text2="@string/pf_dqjx_workendtime" /> -->
+
+
+            <!-- <LinearLayout -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="15dp" -->
+            <!-- android:layout_marginTop="15dp" -->
+            <!-- android:orientation="horizontal" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="center" -->
+            <!-- android:text="检修结果：" /> -->
+
+
+            <!-- <RadioGroup -->
+            <!-- android:id="@+id/pf_dqjx_radioGroup" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:orientation="horizontal" > -->
+
+
+            <!-- <RadioButton -->
+            <!-- android:id="@+id/pf_dqjx_normalButton" -->
+            <!-- style="@style/CustomRadioboxTheme" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:paddingRight="15dp" -->
+            <!-- android:text="合格" /> -->
+
+
+            <!-- <RadioButton -->
+            <!-- android:id="@+id/pf_dqjx_exceptionButton" -->
+            <!-- style="@style/CustomRadioboxTheme" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="不合格" /> -->
+            <!-- </RadioGroup> -->
+            <!-- </LinearLayout> -->
+
+
+            <!-- <com.demo.app.view.CustomeEditText2 -->
+            <!-- android:id="@+id/pf_dqjx_workfzr" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:chint2="@string/pr_new_dnum_hint" -->
+            <!-- CustomAttrs:show_image="true" -->
+            <!-- CustomAttrs:t_text2="@string/pf_dqjx_workfzr" /> -->
+
+
+            <!-- <EditText -->
+            <!-- android:id="@+id/pf_dqjx_xsbz" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginTop="15dp" -->
+            <!-- android:background="@drawable/icon_rounded_rectangle" -->
+            <!-- android:gravity="top" -->
+            <!-- android:hint="@string/pf_dqjx_sbxsbz" -->
+            <!-- android:inputType="textMultiLine" -->
+            <!-- android:maxLines="5" -->
+            <!-- android:minLines="3" -->
+            <!-- android:paddingLeft="8dp" -->
+            <!-- android:scrollbars="vertical" -->
+            <!-- android:textSize="14sp" > -->
+            <!-- </EditText> -->
+            <!-- 重复 结束 -->
+
+            <TextView
+                android:id="@+id/pf_dqjx_addDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/icon_rounded_rectangle"
+                android:drawableLeft="@drawable/icon_file_plus"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:text="添加" />
+
+            <Button
+                android:id="@+id/pf_dqjx_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textColor="@color/table_end"
+                android:text="@string/dm_aqtool_end" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

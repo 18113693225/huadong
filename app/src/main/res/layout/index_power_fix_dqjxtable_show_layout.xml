@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pf_dqjx_show_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_month_pname" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pf_dqjx_show_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_month_runit" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pf_dqjx_show_djperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pf_dqjx_jxperson" />
+
+            <LinearLayout
+                android:id="@+id/common_pf_dqjx_show_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="35dp"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/edit_pf_dqjx_tables"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_franchise_shape"
+                    android:drawableLeft="@drawable/icon_reedit"
+                    android:text="重新编辑"
+                    android:visibility="gone"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/delete_pf_dqjx_tables"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_franchise_shape1"
+                    android:drawableLeft="@drawable/icon_del"
+                    android:text="删除表单"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

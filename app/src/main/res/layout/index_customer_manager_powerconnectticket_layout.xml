@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_stoppower_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_Button="true"
+                CustomAttrs:t_text2="@string/pr_rdeline_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_stoppower_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_rdeline_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_stoppower_sqperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="自动关联手机号"
+                CustomAttrs:t_text2="@string/cm_powerconn_sqperson" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_stoppower_sqtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_image_date="true"
+                CustomAttrs:t_text2="@string/cm_powerconn_sqtime" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/cm_stoppower_sqcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:edit_inputtype="textMultiLine"
+                CustomAttrs:edit_maxline="7"
+                CustomAttrs:edit_minline="5"
+                CustomAttrs:edit_singleline="false"
+                CustomAttrs:t_text2="@string/cm_powerconn_sqcontent" />
+
+            <Button
+                android:id="@+id/cm_stoppower_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@string/cm_powerconn_bottom"
+                android:textColor="@color/table_end" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

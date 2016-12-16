@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/sc_hj_jx_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_pname_hint"
+                CustomAttrs:readonly="true"
+                CustomAttrs:t_text2="@string/pr_new_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/sc_hj_jx_ptype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly="true"
+                CustomAttrs:button_text="@string/pr_new_ptype_select"
+                CustomAttrs:t_text2="@string/pr_new_ptype" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/sc_hj_jx_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly="true"
+                CustomAttrs:chint2="@string/pr_new_runit_hint"
+                CustomAttrs:t_text2="@string/pr_new_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/sc_hj_jx_xsr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly="true"
+                CustomAttrs:chint2="@string/pr_new_xsr_hint"
+                CustomAttrs:t_text2="@string/pr_new_xsr" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/sc_hj_jx_safetyselect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly="true"
+                android:visibility="gone"
+                CustomAttrs:t_text2="@string/sc_hj_safetyselect" />
+
+            <LinearLayout
+                android:id="@+id/sc_hj_jx_commonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+            </LinearLayout>
+           
+
+             <EditText
+                android:id="@+id/sc_hj_jx_jxlog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_rounded_rectangle"
+                android:gravity="top"
+                android:hint="手动填写检修处理情况说明"
+                android:maxLines="6"
+                android:minLines="4"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/sc_hj_jx_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:id="@+id/sc_hj_jx_end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textColor="@color/table_end"
+                android:text="@string/pr_show_end" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

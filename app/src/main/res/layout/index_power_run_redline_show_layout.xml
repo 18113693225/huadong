@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pr_redline_show_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_month_pname" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pr_redline_show_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_month_runit" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pr_redline_show_weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_rdeline_weather" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pr_redline_show_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_rdeline_temperature" />
+
+            <com.demo.app.view.CustomeTextView
+                android:id="@+id/pr_redline_show_xsr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:name_text="@string/pr_rdeline_recordperson" />
+
+<!--             <com.demo.app.view.CustomeTextView -->
+<!--                 android:id="@+id/pr_redline_show_jgunit" -->
+<!--                 android:layout_width="match_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 CustomAttrs:name_text="@string/pr_rdeline_jgunit" /> -->
+
+            <LinearLayout
+                android:id="@+id/common_pr_redline_show_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <!-- <com.demo.app.view.CustomeTextView -->
+            <!-- android:id="@+id/pr_xsk_show_dname" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:name_text="@string/pr_new_dname" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeTextView -->
+            <!-- android:id="@+id/pr_xsk_show_dnum" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:name_text="@string/pr_show_dnum" /> -->
+
+
+            <!-- <Button -->
+            <!-- android:id="@+id/pr_xsk_show_xscontent" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:background="@drawable/button_franchise_shape" -->
+            <!-- android:drawableRight="@drawable/icon_arrow_right" -->
+            <!-- android:gravity="center" -->
+            <!-- android:text="@string/pr_show_xscontent" -->
+            <!-- android:textStyle="bold" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeTextView -->
+            <!-- android:id="@+id/pr_xsk_show_result" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:name_text="@string/pr_show_result" /> -->
+
+
+            <!-- <com.demo.app.view.CustomeTextView -->
+            <!-- android:id="@+id/pr_xsk_show_log" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- CustomAttrs:name_text="@string/pr_show_log" /> -->
+
+            <Button
+                android:id="@+id/deviceJxRedlineBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_franchise_shape"
+                android:gravity="center"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/pr_show_devicejx"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

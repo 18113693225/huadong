@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_prredlinecard" >
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:button_text="@string/pr_rdeline_device_select"
+        CustomAttrs:chint2="@string/pr_rdeline_device_select"
+        CustomAttrs:show_Button="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_dname"
+        android:tag="pr_rdeline_dname" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_dnum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:tag="pr_rdeline_dnum"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/pr_new_dnum" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:tag="pr_rdeline_cwwd"
+        android:text="@string/pr_rdeline_cwwd" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_ax"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:edit_inputtype="decimal"
+        CustomAttrs:show_unit="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_ax"
+        CustomAttrs:unit_text="℃"
+        android:tag="pr_rdeline_ax" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_bx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:edit_inputtype="decimal"
+        CustomAttrs:show_unit="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_bx"
+        CustomAttrs:unit_text="℃"
+        android:tag="pr_rdeline_bx" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_rdeline_cx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:edit_inputtype="decimal"
+        CustomAttrs:show_unit="true"
+        CustomAttrs:t_text2="@string/pr_rdeline_cx"
+        CustomAttrs:unit_text="℃"
+        android:tag="pr_rdeline_cx" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:tag="pr_rdeline_radioLinear" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="巡视结果：" />
+
+        <RadioGroup
+            android:id="@+id/pr_rdeline_radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:tag="pr_rdeline_radioGroup" >
+
+            <RadioButton
+                android:id="@+id/pr_rdeline_normalButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="正常" />
+
+            <RadioButton
+                android:id="@+id/pr_rdeline_exceptionButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="异常" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pr_rdeline_qxradioLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:tag="pr_rdeline_qxradioLinear"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="缺陷类别：" />
+
+        <RadioGroup
+            android:id="@+id/pr_rdeline_qxradioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:tag="pr_rdeline_qxradioGroup" >
+
+            <RadioButton
+                android:id="@+id/pr_rdeline_qxwjButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp"
+                android:text="危机缺陷" />
+
+            <RadioButton
+                android:id="@+id/pr_rdeline_qxzdButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="重大缺陷" />
+
+            <RadioButton
+                android:id="@+id/pr_rdeline_qxybButton"
+                style="@style/CustomRadioboxTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="一般缺陷" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/pr_rdeline_xsbz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/icon_rounded_rectangle"
+        android:gravity="top"
+        android:hint="请输入设备巡视备注"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:minLines="3"
+        android:paddingLeft="8dp"
+        android:scrollbars="vertical"
+        android:tag="pr_rdeline_xsbz"
+        android:textSize="14sp" >
+    </EditText>
+
+</LinearLayout>

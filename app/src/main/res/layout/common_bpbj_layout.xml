@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_bpbj" >
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_Button="true"
+        CustomAttrs:button_text="@string/pr_new_dname_select"
+        CustomAttrs:t_text2="@string/dm_bpbj_devicename"
+        android:tag="dm_bpbj_dname" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_guige"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_bpbj_guige"
+        android:tag="dm_bpbj_guige" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_rukunum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_bpbj_rukunum"
+        android:tag="dm_bpbj_rukunum" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_rukutime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image_date="true"
+        CustomAttrs:t_text2="@string/dm_bpbj_rukutime"
+        android:tag="dm_bpbj_rukutime" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_chukunum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_bpbj_chukunum"
+        android:tag="dm_bpbj_chukunum" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_chukutime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:show_image_date="true"
+        CustomAttrs:t_text2="@string/dm_bpbj_chukutime"
+        android:tag="dm_bpbj_chukutime" />
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/dm_bpbj_kuchunyuer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:t_text2="@string/dm_bpbj_kuchunyuer"
+        android:tag="dm_bpbj_kuchunyuer" />
+
+</LinearLayout>

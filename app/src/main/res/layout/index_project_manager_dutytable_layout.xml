@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:show_image="true"
+                CustomAttrs:t_text2="@string/pr_rdeline_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_ptype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:t_text2="@string/pr_new_ptype" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_rdeline_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_recordperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pr_month_recordperson" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_classname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pm_duty_classname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_dutyfz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:button_text=""
+                CustomAttrs:show_Button="true"
+                android:tag="pm_duty_dutyfz"
+                CustomAttrs:t_text2="@string/pm_duty_dutyfz" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_zhuduty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                 CustomAttrs:button_text=""
+                CustomAttrs:show_Button="true"
+                android:tag="pm_duty_zhuduty"
+                CustomAttrs:t_text2="@string/pm_duty_zhuduty" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_fuduty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:button_text=""
+                CustomAttrs:show_Button="true"
+                android:tag="pm_duty_fuduty"
+                CustomAttrs:t_text2="@string/pm_duty_fuduty" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_shixiperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:button_text=""
+                CustomAttrs:show_Button="true"
+                android:tag="pm_duty_shixiperson"
+                CustomAttrs:t_text2="@string/pm_duty_shixiperson" />
+            
+			<com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:button_text=""
+                CustomAttrs:show_Button="true"
+                android:tag="pm_duty_group"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:t_text2="@string/pm_duty_group" />
+			
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_dutytime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_image_date="true"
+                CustomAttrs:t_text2="@string/pm_duty_dutytime" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_start_dutytime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_image_date="true"
+                CustomAttrs:t_text2="@string/pm_duty_start_dutytime" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/pm_duty_end_dutytime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/pr_new_dnum_hint"
+                CustomAttrs:show_image_date="true"
+                CustomAttrs:t_text2="@string/pm_duty_end_dutytime" />
+
+            <!-- <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/pm_duty_dutytime" />
+
+                <RadioGroup
+                    android:id="@+id/pm_duty_radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/pm_duty_radioWhite"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="15dp"
+                        android:text="@string/pm_duty_whiteduty" />
+
+                    <RadioButton
+                        android:id="@+id/pm_duty_radioBlack"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pm_duty_blackduty" />
+                </RadioGroup>
+            </LinearLayout> -->
+
+            <Button
+                android:id="@+id/pm_duty_saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textColor="@color/table_end"
+                android:text="@string/pm_duty_end" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

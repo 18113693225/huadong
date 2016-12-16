@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical" >
+
+            <include layout="@layout/common_gps_title" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_pname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:show_image="true"
+                CustomAttrs:t_text2="@string/tt_new_pname" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_runit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:t_text2="@string/tt_new_runit" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_rperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:readonly = "true"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:t_text2="@string/tt_new_rperson" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_pnum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:t_text2="@string/tt_new_num" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_opernum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:t_text2="@string/tt_new_opernum" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_operperson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:show_image="true"
+                CustomAttrs:t_text2="@string/tt_new_operperson" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_operstart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:show_image_date="true"
+                CustomAttrs:t_text2="@string/tt_new_operstart" />
+
+            <com.demo.app.view.CustomeEditText2
+                android:id="@+id/oper_new_operend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                CustomAttrs:chint2="@string/tt_new_hint"
+                CustomAttrs:show_image_date="true"
+                CustomAttrs:t_text2="@string/tt_new_operend" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="是否合格：" />
+
+                <RadioGroup
+                    android:id="@+id/oper_new_radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/oper_new_radioOk"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="15dp"
+                        android:text="合格" />
+
+                    <RadioButton
+                        android:id="@+id/oper_new_radioNotOk"
+                        style="@style/CustomRadioboxTheme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不合格" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/oper_new_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_exit_shape"
+                android:text="确认保存" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textColor="@color/table_end"
+                android:text="确认保存后已有表单中查看" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

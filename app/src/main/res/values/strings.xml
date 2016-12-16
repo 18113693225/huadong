@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">电力物业</string>
+    <string name="elec_name"><font color="red">*</font>姓名：</string>
+    <string name="elec_sex"><font color="red">*</font>性别：</string>
+    <string name="elec_ID"><font color="red">*</font>身份证：</string>
+    <string name="elec_major"><font color="red">*</font>专业：</string>
+    <string name="elec_book"><font color="red">*</font>相关证书：</string>
+    <string name="elec_pw"><font color="red">*</font>登陆密码：</string>
+    <string name="enduse_company_name"><font color="red">*</font>公司名称：</string>
+    <string name="enduse_company_phone"><font color="red">*</font>联系电话：</string>
+    <string name="enduse_company_addr"><font color="red">*</font>公司地址：</string>
+    <string name="enduse_company_type"><font color="red">*</font>类别：</string>
+    <string name="enduse_company_level"><font color="red">*</font>电压等级：</string>
+    <string name="enduse_company_gm"><font color="red">*</font>规模/容量：</string>
+    <string name="enduse_company_length"><font color="red">*</font>台数/长度：</string>
+    <string name="enduse_company_ct"><font color="red">*</font>行业/类别：</string>
+    <string name="enduse_company_coper"><font color="red">*</font>合作意向：</string>
+    <string name="enduse_company_pw"><font color="red">*</font>登陆密码：</string>
+    <string name="franchise_name"><font color="red">*</font>姓名：</string>
+    <string name="franchise_ID"><font color="red">*</font>身份证号码：</string>
+    <string name="franchise_addr"><font color="red">*</font>住址：</string>
+    <string name="franchise_phone"><font color="red">*</font>联系电话：</string>
+    <string name="franchise_area">加盟区域：</string>
+    <string name="franchise_coper">合作意向：</string>
+    <string name="franchise_cp_name">公司名称：</string>
+    <string name="franchise_cp_ID">执照编号：</string>
+    <string name="franchise_cp_addr">公司地址：</string>
+    <string name="franchise_cp_person"><font color="red">*</font>联系人：</string>
+    <string name="franchise_cp_money">注册资金：</string>
+    <string name="e_phone"><font color="red">*</font>联系电话：</string>
+    <string name="e_addr"><font color="red">*</font>地址：</string>
+    <string name="e_bank">卡户银行：</string>
+    <string name="e_bank_no">银行卡号：</string>
+    <!-- 新建操作票统计表 -->
+    <string name="tt_new_hint">请输入</string>
+    <string name="tt_new_pname"><font color="red">*</font>项目名称：</string>
+    <string name="tt_new_runit"><font color="red">*</font>运行单位：</string>
+    <string name="tt_new_rperson"><font color="red">*</font>记录人：</string>
+    <string name="tt_new_num"><font color="red">*</font>序号：</string>
+    <string name="tt_new_opernum"><font color="red">*</font>操作票编号：</string>
+    <string name="tt_new_operperson"><font color="red">*</font>操作人：</string>
+    <string name="tt_new_operstart"><font color="red">*</font>开始操作时间：</string>
+    <string name="tt_new_operend"><font color="red">*</font>结束操作时间：</string>
+    <string name="tt_new_isok"><font color="red">*</font>是否合格：</string>
+    <!-- 新建工作票统计表 -->
+    <string name="tt_w_new_pname"><font color="red">*</font>项目名称：</string>
+    <string name="tt_w_new_runit"><font color="red">*</font>运行单位：</string>
+    <string name="tt_w_new_rperson"><font color="red">*</font>记录人：</string>
+    <string name="tt_w_new_num"><font color="red">*</font>序号：</string>
+    <string name="tt_w_new_worknum"><font color="red">*</font>工作票编号：</string>
+    <string name="tt_w_new_workname"><font color="red">*</font>工作票名称：</string>
+    <string name="tt_w_new_fzr"><font color="red">*</font>工作负责人：</string>
+    <string name="tt_w_new_qfz"><font color="red">*</font>工作签发人：</string>
+    <string name="tt_w_new_start"><font color="red">*</font>工作开始时间：</string>
+    <string name="tt_w_new_end"><font color="red">*</font>工作终结时间：</string>
+    <string name="tt_w_new_bottom">确认保存后可以在"我"的工作管理中查看</string>
+    <!-- 电气设备巡视卡 -->
+    <string name="pr_new_pname"><font color="red">*</font>项目名称：</string>
+    <string name="pr_new_pname_hint">请输入项目名称：</string>
+    <string name="pr_new_ptype"><font color="red">*</font>项目类别：</string>
+    <string name="pr_new_ptype_select">选择类别</string>
+    <string name="pr_new_runit"><font color="red">*</font>运行单位：</string>
+    <string name="pr_new_runit_hint">请输入运行单位</string>
+    <string name="pr_new_xsr"><font color="red">*</font>巡视人：</string>
+    <string name="pr_new_xsr_hint">请输入巡视人姓名</string>
+    <string name="pr_new_dname"><font color="red">*</font>类别：</string>
+    <string name="pr_new_dname_select">选择类别</string>
+    <string name="pr_new_dnum">设备编号：</string>
+    <string name="pr_new_dnum_hint">请输入</string>
+    <string name="pr_new_show_xslr">选择内容</string>
+    <string name="pr_new_add_device">添加设备</string>
+    <string name="pr_new_end_info">确认保存后可以在"我"的项目管理中查看</string>
+    <!-- 红外线测温记录薄 -->
+    <string name="pr_rdeline_pname"><font color="red">*</font>项目名称：</string>
+    <string name="pr_rdeline_project_select">选择项目</string>
+    <string name="pr_rdeline_runit"><font color="red">*</font>运行单位：</string>
+    <string name="pr_rdeline_weather"><font color="red">*</font>天气情况：</string>
+    <string name="pr_rdeline_temperature"><font color="red">*</font>环境温度：</string>
+    <string name="pr_rdeline_recordperson"><font color="red">*</font>记录人：</string>
+    <string name="pr_rdeline_jgunit"><font color="red">*</font>间隔单元：</string>
+    <string name="pr_rdeline_dname"><font color="red">*</font>设备名称：</string>
+    <string name="pr_rdeline_device_select">选择设备</string>
+    <string name="pr_rdeline_cwwd"><font color="red">*</font>测温温度：(℃)</string>
+    <string name="pr_rdeline_ax"><font color="red">*</font>A相：</string>
+    <string name="pr_rdeline_bx"><font color="red">*</font>B相：</string>
+    <string name="pr_rdeline_cx"><font color="red">*</font>C相：</string>
+    <!-- 新建运行月报表 -->
+    <string name="pr_month_pname"><font color="red">*</font>项目名称：</string>
+    <string name="pr_month_runit"><font color="red">*</font>运行单位：</string>
+    <string name="pr_month_recordperson"><font color="red">*</font>填表人：</string>
+    <string name="pr_month_aqyxts"><font color="red">*</font>安全运行天数：</string>
+    <string name="pr_month_bydzcz"><font color="red">*</font>本月倒闸操作：</string>
+    <string name="pr_month_byqzdl"><font color="red">*</font>本月全站电量合计：</string>
+    <string name="pr_month_zysbzgfh"><font color="red">*</font>主要设备最高负荷：</string>
+    <string name="pr_month_qzxs"><font color="red">*</font>全站巡视：</string>
+    <string name="pr_month_sbdqsyqh"><font color="red">*</font>设备定期试验切换：</string>
+    <string name="pr_month_byqfjt"><font color="red">*</font>变压器分接头开关档位调整：</string>
+    <string name="pr_month_qzdzhd"><font color="red">*</font>全站定值核对：</string>
+    <string name="pr_month_byzysb"><font color="red">*</font>本月主要设备、\n线路停、送电情况：</string>
+    <string name="pr_month_fxcl"><font color="red">*</font>发现、处理、\n遗留缺陷情况：</string>
+    <string name="pr_month_end">确认保存后可以在电力运行中查看</string>
+    <!-- 显示电气设备巡视卡 -->
+    <string name="pr_show_dnum">设备编号</string>
+    <string name="pr_show_result">巡视结果</string>
+    <string name="pr_show_log">设备巡视备注</string>
+    <string name="pr_show_devicejx">设备检修</string>
+    <string name="pr_show_xscontent">查看巡视类容</string>
+    <string name="pr_show_xjunit"><font color="red">*</font>巡检单位：</string>
+    <string name="pr_show_xjperson"><font color="red">*</font>检修人：</string>
+    <string name="pr_show_deviceyc">设备异常情况</string>
+    <string name="pr_show_end">确认保存后可在 "我" 的工作管理中查看</string>
+    <!-- 工作联系单 -->
+    <string name="cm_workconn_recordTm"><font color="red">*</font>填表日期：</string>
+    <string name="cm_workconn_noticePerson"><font color="red">*</font>通知人员：</string>
+    <string name="cm_workconn_noticePerson_btn">选择人员</string>
+    <string name="cm_workconn_noticeContent"><font color="red">*</font>通知内容：</string>
+    <string name="cm_workconn_bottom">确认保存后已有表单中查看</string>
+    <!-- 停送电联系单 -->
+    <string name="cm_powerconn_sqperson"><font color="red">*</font>申请人：</string>
+    <string name="cm_powerconn_sqtime"><font color="red">*</font>申请停送电时间：</string>
+    <string name="cm_powerconn_sqcontent"><font color="red">*</font>停送电内容：</string>
+    <string name="cm_powerconn_bottom">确认保存后在已有表单中查看</string>
+    <!-- 用户信息反馈表 -->
+    <string name="cm_userinfo_workcontent"><font color="red">*</font>工作内容：</string>
+    <string name="cm_userinfo_workservice"><font color="red">*</font>服务态度：</string>
+    <string name="cm_userinfo_worklevel"><font color="red">*</font>技术水平：</string>
+    <string name="cm_userinfo_worksafety"><font color="red">*</font>安全文明管理：</string>
+    <string name="cm_userinfo_workComment">总体评价：</string>
+    <!-- 电气检修记录卡 -->
+    <string name="pf_dqjx_jxperson"><font color="red">*</font>检修人员：</string>
+    <string name="pf_dqjx_worknum"><font color="red">*</font>工作票编号：</string>
+    <string name="pf_dqjx_jxContent"><font color="red">*</font>检修内容：</string>
+    <string name="pf_dqjx_jxtype"><font color="red">*</font>检修类别：</string>
+    <string name="pf_dqjx_workendtime"><font color="red">*</font>工作完成时间：</string>
+    <string name="pf_dqjx_workfzr"><font color="red">*</font>工作负责人：</string>
+    <string name="pf_dqjx_sbxsbz">请输入设备巡视备注：</string>
+    <string name="pf_dqjx_jxresult">请输入检修结果：</string>
+    <string name="pf_dqjx_end">确认保存后可以在我的工作管理中查看</string>
+    <!-- 咨询 -->
+    <string-array name="welcome_tips">
+        <item>主人，奴婢在此等候多时了</item>
+        <item>主人，近来一切可好</item>
+        <item>亲爱的，我想死你了</item>
+        <item>欢迎归来，我亲爱的主人</item>
+        <item>我是小灵机器人，很高兴为您服务</item>
+    </string-array>
+    <!-- 值班表 -->
+    <string name="pm_duty_classname"><font color="red">*</font>班名：</string>
+    <string name="pm_duty_dutyfz"><font color="red">*</font>值长：</string>
+    <string name="pm_duty_zhuduty"><font color="red">*</font>正值班员：</string>
+    <string name="pm_duty_fuduty"><font color="red">*</font>副值班员：</string>
+    <string name="pm_duty_shixiperson"><font color="red">*</font>值班员：</string>
+    <string name="pm_duty_group"><font color="red">*</font>工作班组：</string>
+    <string name="pm_duty_group_button">选择组员</string>
+    <string name="pm_duty_dutytime"><font color="red">*</font>值班日期：</string>
+    <string name="pm_duty_start_dutytime">值班开始日期：</string>
+    <string name="pm_duty_end_dutytime">值班结束日期：</string>
+    <string name="pm_duty_whiteduty">白班</string>
+    <string name="pm_duty_blackduty">夜班</string>
+    <string name="pm_duty_end">确认保存后可以在我的工作管理中查看</string>
+    <!-- 新建安全工具表 -->
+    <string name="dm_aqtool_djperson"><font color="red">*</font>登记人：</string>
+    <string name="dm_aqtool_devicenum"><font color="red">*</font>编号：</string>
+    <string name="dm_aqtool_deviceselect">选择设备</string>
+    <string name="dm_aqtool_tooldesc"><font color="red">*</font>工器具名称：</string>
+    <string name="dm_aqtool_model"><font color="red">*</font>型号：</string>
+    <string name="dm_aqtool_dylevel"><font color="red">*</font>电压等级：</string>
+    <string name="dm_aqtool_slnum"><font color="red">*</font>数量：</string>
+    <string name="dm_aqtool_sytime"><font color="red">*</font>试验日期：</string>
+    <string name="dm_aqtool_syresult">试验结果：</string>
+    <string name="dm_aqtool_nextsytime"><font color="red">*</font>下次试验日期：</string>
+    <string name="dm_aqtool_bzcontent">请输入备注内容</string>
+    <string name="dm_aqtool_end">确认保存后在已有表单中查看</string>
+    <!-- 新建备品备件登记薄 -->
+    <string name="dm_bpbj_devicename"><font color="red">*</font>设备名称：</string>
+    <string name="dm_bpbj_guige"><font color="red">*</font>规格：</string>
+    <string name="dm_bpbj_rukunum"><font color="red">*</font>入库数量：</string>
+    <string name="dm_bpbj_rukutime"><font color="red">*</font>入库时间：</string>
+    <string name="dm_bpbj_chukunum"><font color="red">*</font>出库数量：</string>
+    <string name="dm_bpbj_chukutime"><font color="red">*</font>出库时间：</string>
+    <string name="dm_bpbj_kuchunyuer"><font color="red">*</font>库存余额：</string>
+    <string name="dm_bpbj_end">确认保存后可以在已有登记薄中查看</string>
+    <!-- 新建设备台账登记表 -->
+    <string name="dm_tz_zichangnum"><font color="red">*</font>出厂编号：</string>
+    <string name="dm_tz_zichangname"><font color="red">*</font>资产名称：</string>
+    <string name="dm_tz_guigemodel"><font color="red">*</font>规格型号：</string>
+    <string name="dm_tz_scfactory"><font color="red">*</font>生产厂家：</string>
+    <string name="dm_tz_sctime"><font color="red">*</font>生产日期：</string>
+    <string name="dm_tz_slnum"><font color="red">*</font>数量：</string>
+    <string name="dm_tz_trytime"><font color="red">*</font>预试时间：</string>
+    <!-- 安全文明 -->
+    <string name="sc_check_safetyselect"><font color="red">*</font>安全选项：</string>
+    <string name="sc_hj_safetyselect"><font color="red">*</font>环境选项：</string>
+    <string name="sc_hj_bz">具体说明</string>
+    <!-- 工作计划 -->
+    <string name="work_sh_start"><font color="red">*</font>开始日期：</string>
+    <string name="work_sh_end"><font color="red">*</font>结束日期：</string>
+    <string name="work_sh_title"><font color="red">*</font>标题：</string>
+    <string name="work_sh_title_hint">请输入计划标题</string>
+    <string name="work_sh_content"><font color="red">*</font>计划内容:</string>
+    <string name="work_log_title_hint">请输入日志标题</string>
+    <string name="work_log_content"><font color="red">*</font>日志内容:</string>
+    <!-- 修改密码 -->
+    <string name="user_update_ypwd"><font color="red">*</font>原密码:    </string>
+    <string name="user_update_xpwd"><font color="red">*</font>新密码:    </string>
+    <string name="user_update_cpwd"><font color="red">*</font>确认密码:</string>
+    <!--分享-->
+    <string name="errcode_success">分享成功</string>
+    <string name="errcode_cancel">取消分享</string>
+    <string name="errcode_deny">拒绝分享</string>
+    <string name="errcode_unknown">未知错误</string>
+ 
+
+    <string name="cancel">取消</string>
+    <string name="select_from_local">从相册中选取</string>
+    <string name="publish_empty_text">请大概描述下拍摄的照片用意...</string>
+    <string name="take_photo">拍照</string>
+
+</resources>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/common_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:shrinkColumns="0,1,2" >
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/elec_name" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/espread_companyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的公司名称" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/e_phone" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/espread_companyPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入你的电话号码"
+                    CustomAttrs:edit_inputtype1="number" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/e_addr" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/espread_companyAddr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:allow_null="false"
+                    CustomAttrs:chint="请输入您的地址" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/e_bank" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/espread_companyBankName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:chint="便于结算使用" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="@string/e_bank_no" />
+
+                <com.demo.app.view.CustomeEditText
+                    android:id="@+id/espread_companyBankCardID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_span="2"
+                    CustomAttrs:edit_inputtype1 = "number"
+                    CustomAttrs:chint="便于结算使用" >
+                </com.demo.app.view.CustomeEditText>
+            </TableRow>
+
+<!--             <TableRow android:layout_marginTop="5dp" > -->
+
+<!--                 <TextView -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_gravity="left|center" -->
+<!--                     android:text="@string/enduse_company_pw" /> -->
+
+<!--                 <com.demo.app.view.CustomeEditText -->
+<!--                     android:id="@+id/espread_companyPassword" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_marginLeft="5dp" -->
+<!--                     android:layout_span="2" -->
+<!--                     CustomAttrs:allow_null="false" -->
+<!--                     CustomAttrs:chint="请输入您的登陆密码" > -->
+<!--                 </com.demo.app.view.CustomeEditText> -->
+<!--             </TableRow> -->
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <com.demo.app.view.CustomeButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    android:visibility="invisible" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    android:visibility="invisible" >
+                </com.demo.app.view.CustomeButton>
+
+                <com.demo.app.view.CustomeButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="5dp"
+                    CustomAttrs:button_value="1"
+                    android:visibility="invisible" >
+                </com.demo.app.view.CustomeButton>
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp" >
+
+                <CheckBox
+                    android:id="@+id/userProtocolEsCheckbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/userProtocolEsTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="使用电力物业并同意电力物业平台的用户服务协议"
+                    android:layout_span="2"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <Button
+                android:id="@+id/espread_regist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_login_shape"
+                android:text="注册" />
+
+            <TextView
+                android:id="@+id/espread_exist_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="已有账号？点此登陆"
+                android:textSize="12sp" />
+        </TableLayout>
+        <!-- </LinearLayout> -->
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CustomAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:tag="common_xsk_jx_show">
+
+    <com.demo.app.view.CustomeEditText2
+        android:id="@+id/pr_device_jx_dname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:chint2="@string/pr_new_dnum_hint"
+        CustomAttrs:readonly="true"
+        CustomAttrs:t_text2="@string/pr_new_dname" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.demo.app.view.CustomeEditText2
+            android:id="@+id/pr_device_jx_dnum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            CustomAttrs:button_text="@string/pr_show_deviceyc"
+            CustomAttrs:chint2="@string/pr_new_dnum_hint"
+            CustomAttrs:readonly="true"
+            CustomAttrs:t_text2="@string/pr_show_dnum" />
+
+        <Button
+            android:id="@+id/pr_device_jx_exception"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:background="@color/login_bg"
+            android:drawableRight="@drawable/icon_arrow_right"
+            android:text="设备异常情况"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <com.demo.app.view.CustomeTextView
+        android:id="@+id/pr_device_jx_qx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        CustomAttrs:name_text="缺陷类别："
+        CustomAttrs:readonly="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="检修结果：" />
+
+        <RadioButton
+            android:id="@+id/pr_device_jx_isok"
+            style="@style/CustomRadioboxTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="15dp"
+            android:text="合格" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/photo_look_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/button_exit_shape"
+        android:padding="8dp"
+        android:text="查看图片"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:background="@drawable/register_item_shape"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/register_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:layout_gravity="center|right"
+        android:layout_weight="1"
+        android:src="@drawable/ic_launcher">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/register_text"
+        android:layout_weight="1"
+        android:layout_gravity="center|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="test"/>
+
+</LinearLayout>
