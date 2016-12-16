@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import org.simple.eventbus.EventBus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +29,8 @@ public class DXSBXSKContentListActivity extends BaseActivity {
     private ListView dqsbxskContentListView;
     private XSContentAdapter adapter;
     private List<Map<Object, Object>> data;
+    private String d_id;
+    private String type;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 //			adapter.notifyDataSetChanged();
@@ -48,6 +51,9 @@ public class DXSBXSKContentListActivity extends BaseActivity {
         String title = "巡视内容";
 
         TitleCommon.setTitle(this, null, title, null, true);
+        Intent intent=getIntent();
+        d_id = intent.getStringExtra("did");
+        type = intent.getStringExtra("type");
 
         dqsbxskContentListView = (ListView) this
                 .findViewById(R.id.dqsbxskContentListView);
@@ -93,7 +99,7 @@ public class DXSBXSKContentListActivity extends BaseActivity {
                     e.printStackTrace();
                 }
             }
-        }, Constents.current_project_id, Constents.current_device_id);
+        }, Integer.valueOf(d_id).intValue(), Integer.valueOf(type).intValue());
         return data;
     }
 

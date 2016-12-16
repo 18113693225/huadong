@@ -27,13 +27,11 @@ public class DXSBXSKContentShowListActivity extends BaseActivity {
     private List<Map<Object, Object>> data;
     private String d_id;
     private String type;
-    ;
+
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             adapter.refresh(data);
         }
-
-        ;
     };
 
     @Override

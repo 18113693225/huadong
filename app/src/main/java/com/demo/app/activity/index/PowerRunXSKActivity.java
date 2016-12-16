@@ -55,6 +55,7 @@ public class PowerRunXSKActivity extends BaseActivity {
     public static String xiangmu = "";
     public static String leibie = "";
     private Map<String, ArrayList<String>> photosMap = new HashMap<String, ArrayList<String>>();
+    private List<String> LBs = new ArrayList<>();
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             if (msg.what == 1) {
@@ -235,6 +236,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         CustomeEditText2 cdname = (CustomeEditText2) child.findViewById(R.id.pr_new_dname);
         cdname.setId(View.generateViewId());
         Button pz = (Button) child.findViewById(R.id.poto_pz);
+        final int btId = commonLayout.indexOfChild(child);
         pz.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -242,7 +244,6 @@ public class PowerRunXSKActivity extends BaseActivity {
                 if (xiangmu == "" || leibie == "") {
                     Toast.makeText(PowerRunXSKActivity.this, "请选择项目或者类别", Toast.LENGTH_LONG).show();
                 } else {
-                    int btId = commonLayout.indexOfChild(child);
                     Intent newIntent = new Intent(PowerRunXSKActivity.this, PublishActivity.class);
                     newIntent.putExtra("btId", btId);
                     startActivity(newIntent);
@@ -267,6 +268,22 @@ public class PowerRunXSKActivity extends BaseActivity {
         });
         RadioButton qxwjButton = (RadioButton) child.findViewById(R.id.pr_new_qxwjButton);
         qxwjButton.setChecked(true);
+        Button bt = (Button) child.findViewById(R.id.bt);
+        bt.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (LBs.size() < btId) {
+                    Toast.makeText(PowerRunXSKActivity.this, "请先选择设备", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Intent i = new Intent();
+                i.putExtra("did", xiangmu);
+                i.putExtra("type", LBs.get(btId));
+                i.setClass(PowerRunXSKActivity.this, DXSBXSKContentListActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                PowerRunXSKActivity.this.startActivity(i);
+            }
+        });
         commonLayout.addView(child);
     }
 
@@ -302,6 +319,9 @@ public class PowerRunXSKActivity extends BaseActivity {
                     int id = data.getExtras().getInt("id");
                     if (ptypeValue == null && runitValue == null) {
                         leibie = id + "";
+                        if (!LBs.contains(leibie)) {
+                            LBs.add(leibie);
+                        }
                     } else {
                         xiangmu = id + "";
                     }

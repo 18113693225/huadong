@@ -17,15 +17,32 @@
         CustomAttrs:show_Button="true"
         CustomAttrs:t_text2="@string/pr_new_dname" />
 
-    <com.demo.app.view.CustomeEditText2
-        android:id="@+id/pr_new_dnum"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:tag="pr_new_dnum"
-        CustomAttrs:button_text="@string/pr_new_show_xslr"
-        CustomAttrs:chint2="@string/pr_new_dnum_hint"
-        CustomAttrs:show_Button="true"
-        CustomAttrs:t_text2="@string/pr_new_dnum" />
+        android:layout_height="wrap_content">
+
+        <com.demo.app.view.CustomeEditText2
+            android:id="@+id/pr_new_dnum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="pr_new_dnum"
+            CustomAttrs:button_text="@string/pr_new_show_xslr"
+            CustomAttrs:chint2="@string/pr_new_dnum_hint"
+            CustomAttrs:show_Button="true"
+            CustomAttrs:t_text2="@string/pr_new_dnum" />
+
+        <Button
+            android:id="@+id/bt"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="6dp"
+            android:background="@color/login_bg"
+            android:drawableRight="@drawable/icon_arrow_right"
+            android:padding="8dp"
+            android:text="选择内容"
+            android:textColor="@color/white" />
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
