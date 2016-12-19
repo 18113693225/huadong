@@ -274,7 +274,7 @@ public class PowerRunXSKActivity extends BaseActivity {
                 public void onClick(View v) {
                     int btId = commonLayout.indexOfChild(child);
                     if (LBs.size() < btId + 1) {
-                        Toast.makeText(PowerRunXSKActivity.this, "请先选择设备", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PowerRunXSKActivity.this, "请选择设备类别，相同的设备不能重复添加！,", Toast.LENGTH_SHORT).show();
                         return;
                     } else {
                         Intent i = new Intent();
