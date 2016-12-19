@@ -66,7 +66,7 @@ public class DXSBXSKContentShowListActivity extends BaseActivity {
                         map.put("text1", (i + 1) + "." + obj.get("device_name").toString());
                         map.put("text", "\"" + (i + 1) + "." + obj.get("device_name").toString() + "\"");
                         map.put("device_content_id", obj.get("device_content_id").toString());
-                        map.put("select_val", 0);
+                        map.put("select_val", obj.get("select_val").toString());
                         data.add(map);
                     }
                     Map<Object, Object> m1 = new HashMap<Object, Object>();

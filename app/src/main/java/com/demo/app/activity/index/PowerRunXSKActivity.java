@@ -119,7 +119,7 @@ public class PowerRunXSKActivity extends BaseActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 int count = commonLayout.getChildCount();
-                if (Constents.xscontentList.size() < count) {
+                if (Constents.contentListMap.size() < count) {
                     Toast.makeText(PowerRunXSKActivity.this, "最后一条设备未添加内容", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -155,14 +155,9 @@ public class PowerRunXSKActivity extends BaseActivity {
                                 }
                                 bean.setDevice_name(((CustomeEditText2) child).getEditTexTag());
                             } else if (tag.equals("pr_new_dnum")) {
-//                                List<Map<Object, Object>> upLists = new ArrayList<Map<Object, Object>>();
-//                                List<Map<Object, Object>> list1 = Constents.xskcontentList.get(i);
-//                                for (int o = 0; o < list1.size(); o++) {
-//                                    if (list1.get(o).get("select_val").equals("0")) {
-//                                        upLists.add(list1.get(o));
-//                                    }
-//                                }
-                                bean.setDeviceContentList(Constents.xserrorcontentList);
+                                if (Constents.contentListMap.containsKey(i + "")) {
+                                    bean.setDeviceContentList(Constents.contentListMap.get(i + ""));
+                                }
                                 bean.setEquipment_number(((CustomeEditText2) child).getText().toString());
                             } else if (tag.equals("pr_xsk_radioLinear")) {
                                 LinearLayout ll = (LinearLayout) child;
@@ -229,11 +224,11 @@ public class PowerRunXSKActivity extends BaseActivity {
      */
     @SuppressLint("NewApi")
     public void addDevice() {
-//        final int count = commonLayout.getChildCount();
-//        if (Constents.xskcontentList.size() < count) {
-//            Toast.makeText(PowerRunXSKActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
-//            return;
-//        }
+        final int count = commonLayout.getChildCount();
+        if (Constents.contentListMap.size() < count) {
+            Toast.makeText(PowerRunXSKActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
+            return;
+        }
         final View child = getLayoutInflater().inflate(R.layout.common_prxsk_layout, null);
         CustomeEditText2 cdname = (CustomeEditText2) child.findViewById(R.id.pr_new_dname);
         cdname.setId(View.generateViewId());
@@ -270,25 +265,29 @@ public class PowerRunXSKActivity extends BaseActivity {
         });
         RadioButton qxwjButton = (RadioButton) child.findViewById(R.id.pr_new_qxwjButton);
         qxwjButton.setChecked(true);
-        Button bt = (Button) child.findViewById(R.id.bt);
-        bt.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int btId = commonLayout.indexOfChild(child);
-                if (LBs.size() < btId + 1) {
-                    Toast.makeText(PowerRunXSKActivity.this, "请先选择设备", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    Intent i = new Intent();
-                    i.putExtra("did", xiangmu);
-                    i.putExtra("type", LBs.get(btId));
-                    i.putExtra("btId", btId);
-                    i.setClass(PowerRunXSKActivity.this, DXSBXSKContentListActivity.class);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    PowerRunXSKActivity.this.startActivity(i);
+        CustomeEditText2 ce = (CustomeEditText2) child.findViewById(R.id.pr_new_dnum);
+
+        Button bt = (Button) ce.findViewById(R.id.custome_button2);
+        if (ce.getTag().equals("pr_new_dnum")) {
+            bt.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int btId = commonLayout.indexOfChild(child);
+                    if (LBs.size() < btId + 1) {
+                        Toast.makeText(PowerRunXSKActivity.this, "请先选择设备", Toast.LENGTH_SHORT).show();
+                        return;
+                    } else {
+                        Intent i = new Intent();
+                        i.putExtra("did", xiangmu);
+                        i.putExtra("type", LBs.get(btId));
+                        i.putExtra("btId", btId);
+                        i.setClass(PowerRunXSKActivity.this, DXSBXSKContentListActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        PowerRunXSKActivity.this.startActivity(i);
+                    }
                 }
-            }
-        });
+            });
+        }
         commonLayout.addView(child);
     }
 
