@@ -87,6 +87,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         Constents.xskcontentList.clear();
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
+        Constents.contentListMap.clear();
         Constents.devicenum = 0;
         sp = getSharedPreferences(Constents.SHARE_CONFIG, Context.MODE_PRIVATE);
         commonLayout = (LinearLayout) this.findViewById(R.id.pr_xsk_commonLayout);
@@ -281,6 +282,7 @@ public class PowerRunXSKActivity extends BaseActivity {
                     Intent i = new Intent();
                     i.putExtra("did", xiangmu);
                     i.putExtra("type", LBs.get(btId));
+                    i.putExtra("btId", btId);
                     i.setClass(PowerRunXSKActivity.this, DXSBXSKContentListActivity.class);
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     PowerRunXSKActivity.this.startActivity(i);
@@ -354,10 +356,6 @@ public class PowerRunXSKActivity extends BaseActivity {
         photosMap.putAll(map);
     }
 
-    @Subscriber(tag = "list")
-    public void getContentList(List<Map<Object, Object>> list) {
-
-    }
 
     @Override
     public void onStart() {

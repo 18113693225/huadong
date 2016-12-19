@@ -1,5 +1,6 @@
 package com.demo.app.adapter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,18 +20,20 @@ import android.widget.TextView;
 public class XSContentAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Map<Object, Object>> datas;
+    private ArrayList<Map<Object, Object>> datas;
+    private int btId;
 
 
-    public XSContentAdapter(Context context, List<Map<Object, Object>> datas) {
+    public XSContentAdapter(Context context, ArrayList<Map<Object, Object>> datas, int btId) {
 
-        if (Constents.xserrorcontentList.size() != 0) {
-            this.datas = Constents.xserrorcontentList;
-            this.context = context;
-        } else {
-            this.context = context;
-            this.datas = datas;
-        }
+//        if (Constents.xserrorcontentList.size() != 0) {
+//            this.datas = Constents.xserrorcontentList;
+//            this.context = context;
+//        } else {
+        this.context = context;
+        this.datas = datas;
+        this.btId = btId;
+        //    }
 
 
     }
@@ -56,12 +59,12 @@ public class XSContentAdapter extends BaseAdapter {
     }
 
     public void refresh(List<Map<Object, Object>> list) {
-        if (Constents.xserrorcontentList.size() == 0) {
-            datas = list;
-            Constents.xserrorcontentList.clear();
-        } else {
-            datas = Constents.xserrorcontentList;
-        }
+//        if (Constents.xserrorcontentList.size() == 0) {
+//            datas = list;
+//            Constents.xserrorcontentList.clear();
+//        } else {
+//            datas = Constents.xserrorcontentList;
+//        }
 
         notifyDataSetChanged();
     }
@@ -100,6 +103,10 @@ public class XSContentAdapter extends BaseAdapter {
                     datas.get(position).put("select_val", 0);
                     holder.text.setBackgroundColor(Color.WHITE);
                 }
+                if (Constents.contentListMap.containsKey(btId + "")) {
+//                    Constents.contentListMap.
+                }
+                Constents.contentListMap.put(btId + "", datas);
                 Constents.xserrorcontentList = datas;
             }
         });

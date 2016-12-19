@@ -28,9 +28,10 @@ import com.demo.app.util.TitleCommon;
 public class DXSBXSKContentListActivity extends BaseActivity {
     private ListView dqsbxskContentListView;
     private XSContentAdapter adapter;
-    private List<Map<Object, Object>> data;
+    private ArrayList<Map<Object, Object>> data;
     private String d_id;
     private String type;
+    private int btId;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
 //			adapter.notifyDataSetChanged();
@@ -47,22 +48,29 @@ public class DXSBXSKContentListActivity extends BaseActivity {
         setContentView(R.layout.dqsbxsk_content_list_layout);
         SharedPreferences sp = getSharedPreferences(Constents.SHARE_CONFIG,
                 Context.MODE_PRIVATE);
+
         int uid = sp.getInt("userId", -1);
         String title = "巡视内容";
-
         TitleCommon.setTitle(this, null, title, null, true);
-        Intent intent=getIntent();
+
+        Intent intent = getIntent();
         d_id = intent.getStringExtra("did");
         type = intent.getStringExtra("type");
-
+        btId = intent.getIntExtra("btId", -1);
         dqsbxskContentListView = (ListView) this
                 .findViewById(R.id.dqsbxskContentListView);
-        adapter = new XSContentAdapter(this, getData());
+
+        if (Constents.contentListMap.size() < btId + 1) {
+            adapter = new XSContentAdapter(this, getData(), btId);
+        } else {
+            adapter = new XSContentAdapter(this, Constents.contentListMap.get(btId + ""), btId);
+        }
+
         dqsbxskContentListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         dqsbxskContentListView.setAdapter(adapter);
     }
 
-    public List<Map<Object, Object>> getData() {
+    public ArrayList<Map<Object, Object>> getData() {
         data = new ArrayList<Map<Object, Object>>();
         NetworkData.getInstance().deviceContentList(new NetworkResponceFace() {
 
@@ -82,9 +90,9 @@ public class DXSBXSKContentListActivity extends BaseActivity {
                         data.add(map);
                     }
 //					Constents.xscontentList.add(data);
-                    Map<Object, Object> m1 = new HashMap<Object, Object>();
-                    m1.put("deviceId", Constents.current_device_id);
-                    m1.put("result", data);
+//                    Map<Object, Object> m1 = new HashMap<Object, Object>();
+//                    m1.put("deviceId", Constents.current_device_id);
+//                    m1.put("result", data);
                     /*for(int j=0;j<Constents.xscontentList.size();j++){
                         //去除相同设备ID的巡视内容
 						if(Constents.xscontentList.get(j).get("deviceId").equals(Constents.current_device_id)){
@@ -92,7 +100,7 @@ public class DXSBXSKContentListActivity extends BaseActivity {
 						}
 					}*/
                     //重新添加
-                    Constents.xscontentList.add(m1);
+//                    Constents.xscontentList.add(m1);
                     handler.obtainMessage().sendToTarget();
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
@@ -111,6 +119,6 @@ public class DXSBXSKContentListActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.getDefault().post(Constents.xserrorcontentList, "list");
+//        EventBus.getDefault().post(Constents.xserrorcontentList, "list");
     }
 }
