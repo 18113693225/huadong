@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.demo.app.R;
 import com.demo.app.util.Constents;
+import com.google.gson.annotations.Since;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -104,10 +105,12 @@ public class XSContentAdapter extends BaseAdapter {
                     holder.text.setBackgroundColor(Color.WHITE);
                 }
                 if (Constents.contentListMap.containsKey(btId + "")) {
-//                    Constents.contentListMap.
+                    Constents.contentListMap.remove(btId + "");
+                    Constents.contentListMap.put(btId + "", datas);
+                } else {
+                    Constents.contentListMap.put(btId + "", datas);
                 }
-                Constents.contentListMap.put(btId + "", datas);
-                Constents.xserrorcontentList = datas;
+                // Constents.xserrorcontentList = datas;
             }
         });
         return convertView;
