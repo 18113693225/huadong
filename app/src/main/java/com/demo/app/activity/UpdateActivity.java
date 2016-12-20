@@ -29,7 +29,7 @@ public class UpdateActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
-        TitleCommon.setTitle(this, null, "软件更新", TabMainActivity.class, true);
+//        TitleCommon.setTitle(this, null, "软件更新", TabMainActivity.class, true);
         initView();
     }
 
@@ -79,21 +79,21 @@ public class UpdateActivity extends BaseActivity {
                 return super.shouldOverrideUrlLoading(view, url);
             }
 
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-
-                //编写 javaScript方法
-                String javascript = "javascript:function hideOther(){ " +
-                        "var headerHide = document.getElementByClassName('mod-sub-header');" +
-                        "headerHide.remove();}";
-
-                //创建方法
-                view.loadUrl(javascript);
-                //加载方法
-                view.loadUrl("javascript:hideOther();");
-
-            }
+//            @Override
+//            public void onPageFinished(WebView view, String url) {
+//                super.onPageFinished(view, url);
+//
+//                //编写 javaScript方法
+//                String javascript = "javascript:function hideOther(){ " +
+//                        "var headerHide = document.getElementByClassName('mod-sub-header');" +
+//                        "headerHide.remove();}";
+//
+//                //创建方法
+//                view.loadUrl(javascript);
+//                //加载方法
+//                view.loadUrl("javascript:hideOther();");
+//
+//            }
         });
     }
 
@@ -104,6 +104,15 @@ public class UpdateActivity extends BaseActivity {
         if (mWebView != null) {
             mWebView.removeAllViews();
             mWebView.destroy();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mWebView.canGoBack()) {
+            mWebView.goBack();
+        } else {
+            finish();
         }
     }
 }
