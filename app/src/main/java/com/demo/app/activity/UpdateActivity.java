@@ -78,6 +78,22 @@ public class UpdateActivity extends BaseActivity {
                 }
                 return super.shouldOverrideUrlLoading(view, url);
             }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+
+                //编写 javaScript方法
+                String javascript = "javascript:function hideOther(){ " +
+                        "var headerHide = document.getElementByClassName('mod-sub-header');" +
+                        "headerHide.remove();}";
+
+                //创建方法
+                view.loadUrl(javascript);
+                //加载方法
+                view.loadUrl("javascript:hideOther();");
+
+            }
         });
     }
 
