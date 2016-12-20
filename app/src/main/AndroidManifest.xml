@@ -533,6 +533,10 @@
             android:name=".activity.index.PowerRunJXLookImageActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.UpdateActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

@@ -191,7 +191,7 @@ public class PublishActivity extends Activity {
                                 Map<String, ArrayList<String>> m = new HashMap<String, ArrayList<String>>();
                                 m.put(id, lists);
                                 EventBus.getDefault().post(m, "photo");
-                                Toast.makeText(PublishActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PublishActivity.this, "上传成功,请前往巡视卡保存。", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(PublishActivity.this, "上传失败", Toast.LENGTH_SHORT).show();
                             }
