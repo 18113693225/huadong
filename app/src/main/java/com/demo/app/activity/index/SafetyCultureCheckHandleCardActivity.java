@@ -177,13 +177,13 @@ public class SafetyCultureCheckHandleCardActivity extends BaseActivity {
 //		}
         ImageView status_check = (ImageView) child.findViewById(R.id.status_check);
         TextView text_check = (TextView) child.findViewById(R.id.text_check);
-        if (bean.getCheck_result() == 0 ) {
-            status_check.setImageResource(R.drawable.icon_close);
-            text_check.setText("不合格");
-        } else {
-            status_check.setImageResource(R.drawable.icon_check);
-            text_check.setText("合格");
-        }
+//        if (bean.getCheck_result() == 0 ) {
+//            status_check.setImageResource(R.drawable.icon_close);
+//            text_check.setText("不合格");
+//        } else {
+//            status_check.setImageResource(R.drawable.icon_check);
+//            text_check.setText("合格");
+//        }
         CustomeTextView qx = (CustomeTextView) child.findViewById(R.id.pr_device_jx_qx);
         qx.setVisibility(View.GONE);
 //		qx.setValueText(bean.getDefect_type());

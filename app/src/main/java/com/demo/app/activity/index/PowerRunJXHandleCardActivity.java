@@ -92,10 +92,6 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                if (Constents.jxcontentList.size() == 0) {
-                    Toast.makeText(PowerRunJXHandleCardActivity.this, "请选择你修改的内容再提交", Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 String jxlogValue = jxlog.getText().toString();
                 String userId = sp.getInt("userId", 0) + "";
                 Gson gson = new Gson();
@@ -184,14 +180,13 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
 //        RadioButton result = (RadioButton) child.findViewById(R.id.pr_device_jx_isok);
         ImageView status_check = (ImageView) child.findViewById(R.id.status_check);
         TextView text_check = (TextView) child.findViewById(R.id.text_check);
-        if (bean.getInspection_result() == 0) {
-            status_check.setImageResource(R.drawable.icon_close);
-            text_check.setText("不合格");
-        } else {
-            status_check.setImageResource(R.drawable.icon_check);
-            text_check.setText("合格");
-
-        }
+//        if (bean.getInspection_result() == 0) {
+//            status_check.setImageResource(R.drawable.icon_close);
+//            text_check.setText("不合格");
+//        } else {
+//            status_check.setImageResource(R.drawable.icon_check);
+//            text_check.setText("合格");
+//        }
         CustomeTextView qx = (CustomeTextView) child.findViewById(R.id.pr_device_jx_qx);
         qx.setValueText(bean.getDefect_type());
         Button xscontentBtn = (Button) child.findViewById(R.id.pr_device_jx_exception);
