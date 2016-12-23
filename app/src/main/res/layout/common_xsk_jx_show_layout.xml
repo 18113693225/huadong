@@ -63,12 +63,27 @@
             android:layout_gravity="center"
             android:text="检修结果：" />
 
-        <RadioButton
-            android:id="@+id/pr_device_jx_isok"
-            style="@style/CustomRadioboxTheme"
+        <!--<RadioButton-->
+        <!--android:id="@+id/pr_device_jx_isok"-->
+        <!--style="@style/CustomRadioboxTheme"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:paddingRight="15dp" />-->
+        <ImageView
+            android:id="@+id/status_check"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon_check" />
+
+        <TextView
+            android:id="@+id/text_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="15dp" />
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="合格" />
+
     </LinearLayout>
 
     <Button

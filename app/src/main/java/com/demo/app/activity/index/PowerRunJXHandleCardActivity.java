@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -180,13 +181,16 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
         CustomeEditText2 dnum = (CustomeEditText2) child.findViewById(R.id.pr_device_jx_dnum);
         dname.setText(bean.getDevice_name());
         dnum.setText(bean.getEquipment_number());
-        RadioButton result = (RadioButton) child.findViewById(R.id.pr_device_jx_isok);
-        if (bean.getInspection_result() == 0 && pwm != null) {
-            result.setChecked(false);
-            result.setText("不合格");
+//        RadioButton result = (RadioButton) child.findViewById(R.id.pr_device_jx_isok);
+        ImageView status_check = (ImageView) child.findViewById(R.id.status_check);
+        TextView text_check = (TextView) child.findViewById(R.id.text_check);
+        if (bean.getInspection_result() == 0) {
+            status_check.setImageResource(R.drawable.icon_close);
+            text_check.setText("不合格");
         } else {
-            result.setChecked(true);
-            result.setText("合格");
+            status_check.setImageResource(R.drawable.icon_check);
+            text_check.setText("合格");
+
         }
         CustomeTextView qx = (CustomeTextView) child.findViewById(R.id.pr_device_jx_qx);
         qx.setValueText(bean.getDefect_type());
