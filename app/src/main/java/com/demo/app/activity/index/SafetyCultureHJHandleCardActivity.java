@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -29,7 +30,11 @@ import com.demo.app.view.CustomeEditText2;
 import com.demo.app.view.CustomeTextView;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SafetyCultureHJHandleCardActivity extends BaseActivity {
+    private SharedPreferences sp;
     private CustomeEditText2 pname, ptype, runit, xsr/*,safetyselect*/;
     private Button saveBtn;
     private TextView ttime, taddress;
@@ -39,6 +44,7 @@ public class SafetyCultureHJHandleCardActivity extends BaseActivity {
     private String oper_type;
     private String lid;
     private String pwm;
+    private List<String> ids = new ArrayList<>();
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             if (msg.what == 0) {
@@ -57,7 +63,9 @@ public class SafetyCultureHJHandleCardActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_safety_culture_hj_handle_xsk_layout);
+        sp = getSharedPreferences(Constents.SHARE_CONFIG, MODE_PRIVATE);
         Constents.jxcontentList.clear();
+        ids.clear();
         //判断从哪里进入的
         pwm = getIntent().getStringExtra("type");
         if (pwm != null) {
@@ -84,6 +92,7 @@ public class SafetyCultureHJHandleCardActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                String userId = sp.getInt("userId", 0) + "";
                 String jxlogValue = jxlog.getText().toString();
                 Gson gson = new Gson();
                 NetworkData.getInstance().maintenanceTaskCardResult(new NetworkResponceFace() {
@@ -107,7 +116,7 @@ public class SafetyCultureHJHandleCardActivity extends BaseActivity {
                         }
                     }
 
-                }, lid, jxlogValue, oper_type, gson.toJson(Constents.jxcontentList));
+                }, lid, jxlogValue, oper_type, gson.toJson(Constents.jxcontentList), userId, ids);
             }
         });
         //个人中心工作管理
@@ -147,6 +156,7 @@ public class SafetyCultureHJHandleCardActivity extends BaseActivity {
                 JSONObject obj = (JSONObject) rel.get(i);
                 Gson gson = new Gson();
                 EnvironmentalInspectionBean bean = gson.fromJson(obj.toString(), EnvironmentalInspectionBean.class);
+                ids.add(bean.getId() + "");
                 addDevice(bean);
             }
         } catch (JSONException e) {

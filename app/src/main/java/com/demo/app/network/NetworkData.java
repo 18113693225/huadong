@@ -2,6 +2,7 @@ package com.demo.app.network;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -1527,24 +1528,15 @@ public class NetworkData {
      *                     }
      *                     ]
      */
-    public void maintenanceTaskCardResult(NetworkResponceFace face, String id, String dealResult, String type, String check_result) {
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("id", id);
-        map.put("type", type);
-        map.put("deal_result", dealResult);
-        map.put("check_result_list", check_result);
 
-        getDescribeInfo(face, "/api/maintenanceTaskCardResult", map);
-    }
-
-
-    public void maintenanceTaskCardResult(NetworkResponceFace face, String id, String dealResult, String type, String check_result, String userId) {
+    public void maintenanceTaskCardResult(NetworkResponceFace face, String id, String dealResult, String type, String check_result, String userId, List<String> ids) {
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("id", id);
         map.put("type", type);
         map.put("deal_result", dealResult);
         map.put("check_result_list", check_result);
         map.put("userId", userId);
+        map.put("card_list", ids);
 
         getDescribeInfo(face, "/api/maintenanceTaskCardResult", map);
     }

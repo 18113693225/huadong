@@ -31,6 +31,10 @@ import com.demo.app.view.CustomeEditText2;
 import com.demo.app.view.CustomeTextView;
 import com.google.gson.Gson;
 
+import java.security.IdentityScope;
+import java.util.ArrayList;
+import java.util.List;
+
 public class PowerRunJXHandleCardActivity extends BaseActivity {
     private SharedPreferences sp;
     private CustomeEditText2 pname, ptype, runit, jxperson;
@@ -42,6 +46,7 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
     private String oper_type;
     private String lid;
     private String pwm;
+    private List<String> ids = new ArrayList<>();
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             if (msg.what == 0) {
@@ -65,6 +70,7 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
         setContentView(R.layout.index_power_run_handle_card_layout);
         sp = getSharedPreferences(Constents.SHARE_CONFIG, MODE_PRIVATE);
         Constents.jxcontentList.clear();
+        ids.clear();
         //判断从哪里进入的
         pwm = getIntent().getStringExtra("type");
         if (pwm != null) {
@@ -116,7 +122,7 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
                         }
                     }
 
-                }, lid, jxlogValue, oper_type, gson.toJson(Constents.jxcontentList), userId);
+                }, lid, jxlogValue, oper_type, gson.toJson(Constents.jxcontentList), userId, ids);
             }
         });
         //个人中心工作管理
@@ -156,6 +162,7 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
                 JSONObject obj = (JSONObject) rel.get(i);
                 Gson gson = new Gson();
                 InspectionCardBean bean = gson.fromJson(obj.toString(), InspectionCardBean.class);
+                ids.add(bean.getId() + "");
                 addDevice(bean);
             }
         } catch (JSONException e) {
