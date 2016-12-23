@@ -91,6 +91,10 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
+                if (Constents.jxcontentList.size() == 0) {
+                    Toast.makeText(PowerRunJXHandleCardActivity.this, "请选择你修改的内容再提交", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 String jxlogValue = jxlog.getText().toString();
                 String userId = sp.getInt("userId", 0) + "";
                 Gson gson = new Gson();

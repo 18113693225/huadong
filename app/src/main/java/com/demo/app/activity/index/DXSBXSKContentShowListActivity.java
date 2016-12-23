@@ -74,7 +74,7 @@ public class DXSBXSKContentShowListActivity extends BaseActivity {
                     m1.put("check_result", data);
                     for (int j = 0; j < Constents.jxcontentList.size(); j++) {
                         //去除相同设备ID的巡视内容
-                        if (Constents.jxcontentList.get(j).get("deviceId").equals(d_id)) {
+                        if (Constents.jxcontentList.get(j).get("inspectionId").equals(d_id)) {
                             Constents.jxcontentList.remove(Constents.jxcontentList.get(j));
                         }
                     }
