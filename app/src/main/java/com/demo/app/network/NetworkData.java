@@ -1532,7 +1532,7 @@ public class NetworkData {
         map.put("id", id);
         map.put("type", type);
         map.put("deal_result", dealResult);
-        map.put("check_result", check_result);
+        map.put("check_result_list", check_result);
 
         getDescribeInfo(face, "/api/maintenanceTaskCardResult", map);
     }
