@@ -373,7 +373,7 @@ public class WorkTicketNameListActivity extends BaseActivity {
                 }, Constents.current_project_id);
                 break;
         /*case 12:
-			NetworkData.getInstance().deviceContentList(new NetworkResponceFace() {
+            NetworkData.getInstance().deviceContentList(new NetworkResponceFace() {
 				
 				@Override
 				public void callback(String result) {
@@ -478,7 +478,6 @@ public class WorkTicketNameListActivity extends BaseActivity {
 
         return data;
     }
-
 
     public void getXSContent() {
         final List<Map<Object, Object>> content = new ArrayList<Map<Object, Object>>();
