@@ -70,7 +70,7 @@ public class DXSBXSKContentShowListActivity extends BaseActivity {
                         data.add(map);
                     }
                     Map<Object, Object> m1 = new HashMap<Object, Object>();
-                    m1.put("deviceId", d_id);
+                    m1.put("inspectionId", d_id);
                     m1.put("check_result", data);
                     for (int j = 0; j < Constents.jxcontentList.size(); j++) {
                         //去除相同设备ID的巡视内容

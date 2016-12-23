@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -30,6 +31,7 @@ import com.demo.app.view.CustomeTextView;
 import com.google.gson.Gson;
 
 public class PowerRunJXHandleCardActivity extends BaseActivity {
+    private SharedPreferences sp;
     private CustomeEditText2 pname, ptype, runit, jxperson;
     private Button saveBtn;
     private TextView ttime, taddress;
@@ -60,6 +62,7 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_power_run_handle_card_layout);
+        sp = getSharedPreferences(Constents.SHARE_CONFIG, MODE_PRIVATE);
         Constents.jxcontentList.clear();
         //判断从哪里进入的
         pwm = getIntent().getStringExtra("type");
@@ -81,12 +84,15 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
         taddress = (TextView) this.findViewById(R.id.title_gps_address);
         jxlog = (EditText) this.findViewById(R.id.pr_device_jx_jxlog);
         saveBtn = (Button) this.findViewById(R.id.pr_device_jx_saveBtn);
+
+
         saveBtn.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 String jxlogValue = jxlog.getText().toString();
+                String userId = sp.getInt("userId", 0) + "";
                 Gson gson = new Gson();
                 NetworkData.getInstance().maintenanceTaskCardResult(new NetworkResponceFace() {
 
@@ -109,7 +115,7 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
                         }
                     }
 
-                }, lid, jxlogValue, oper_type, gson.toJson(Constents.jxcontentList));
+                }, lid, jxlogValue, oper_type, gson.toJson(Constents.jxcontentList), userId);
             }
         });
         //个人中心工作管理
@@ -173,8 +179,10 @@ public class PowerRunJXHandleCardActivity extends BaseActivity {
         RadioButton result = (RadioButton) child.findViewById(R.id.pr_device_jx_isok);
         if (bean.getInspection_result() == 0 && pwm != null) {
             result.setChecked(false);
+            result.setText("不合格");
         } else {
             result.setChecked(true);
+            result.setText("合格");
         }
         CustomeTextView qx = (CustomeTextView) child.findViewById(R.id.pr_device_jx_qx);
         qx.setValueText(bean.getDefect_type());

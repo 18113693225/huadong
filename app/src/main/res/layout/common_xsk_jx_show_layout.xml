@@ -68,8 +68,7 @@
             style="@style/CustomRadioboxTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="15dp"
-            android:text="合格" />
+            android:paddingRight="15dp" />
     </LinearLayout>
 
     <Button

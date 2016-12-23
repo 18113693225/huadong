@@ -5,7 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -14,7 +13,6 @@ import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
 import com.demo.app.R;
-import com.demo.app.util.TitleCommon;
 
 /**
  * Created by LXG on 2016/12/20.

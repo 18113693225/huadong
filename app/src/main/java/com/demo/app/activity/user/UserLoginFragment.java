@@ -241,8 +241,8 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
                         @Override
                         public void callback(String result) {
                             // TODO Auto-generated method stub
-						/*
-						 * userTitle.setVisibility(View.GONE);
+                        /*
+                         * userTitle.setVisibility(View.GONE);
 						 * loginLinearLayout.setVisibility(View.GONE);
 						 * personCenterLinearLayout.setVisibility(View.VISIBLE);
 						 */

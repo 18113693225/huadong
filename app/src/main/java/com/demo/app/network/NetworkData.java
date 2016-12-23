@@ -1537,6 +1537,18 @@ public class NetworkData {
         getDescribeInfo(face, "/api/maintenanceTaskCardResult", map);
     }
 
+
+    public void maintenanceTaskCardResult(NetworkResponceFace face, String id, String dealResult, String type, String check_result, String userId) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id", id);
+        map.put("type", type);
+        map.put("deal_result", dealResult);
+        map.put("check_result", check_result);
+        map.put("userId", userId);
+
+        getDescribeInfo(face, "/api/maintenanceTaskCardResult", map);
+    }
+
     /**
      * 检修任务 - 设备内容检查结果数据
      *
