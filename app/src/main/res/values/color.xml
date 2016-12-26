@@ -40,4 +40,7 @@
     <color name="table_end">#ff8200</color>
     <color name="line">#353839</color>
     <color name="test">#FCFCFC</color>
+
+    <color name="translucence">#506050</color>
+
 </resources>
