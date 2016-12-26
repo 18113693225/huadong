@@ -145,6 +145,6 @@
         android:paddingLeft="8dp"
         android:scrollbars="vertical"
         android:tag="pr_new_xsbz"
-        android:textSize="14sp"></EditText>
+        android:textSize="14sp" />
 
 </LinearLayout>

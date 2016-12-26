@@ -398,8 +398,8 @@ public class WorkTicketNameListActivity extends BaseActivity {
 			},Constents.current_project_id,Constents.current_device_id);
 			break;*/
             case 13:
-			/*String[] desc = { "验电器", "绝缘手套", "绝缘靴", "绝缘梯", "接地线夹", "安全帽",
-					"安全围栏", "红布帘", "红马甲", "登高板", "保险带", "防毒面具", "万用表" };
+            /*String[] desc = { "验电器", "绝缘手套", "绝缘靴", "绝缘梯", "接地线夹", "安全帽",
+                    "安全围栏", "红布帘", "红马甲", "登高板", "保险带", "防毒面具", "万用表" };
 			for (int i = 0; i < desc.length; i++) {
 				Map<String, Object> map = new HashMap<String, Object>();
 				map.put("text", desc[i]);
