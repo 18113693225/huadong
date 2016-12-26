@@ -6,8 +6,6 @@ package com.demo.app.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.baidu.android.pushservice.PushConstants;
-import com.baidu.android.pushservice.PushManager;
 import com.demo.app.R;
 import com.demo.app.activity.index.IndexFragment;
 import com.demo.app.activity.user.UserLoginFragment;
@@ -67,7 +65,6 @@ public class TabMainActivity extends FragmentActivity implements Response {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        PushManager.startWork(getApplicationContext(), PushConstants.LOGIN_TYPE_API_KEY, "PU9KsKxWhshrIYZETsxzsSGc9p5tqNDq");
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.tab_main_layout);
         sp = getSharedPreferences(Constents.SHARE_CONFIG, Context.MODE_PRIVATE);
