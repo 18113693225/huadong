@@ -10,6 +10,6 @@
     <com.demo.app.view.ImageRecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></com.demo.app.view.ImageRecyclerView>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
