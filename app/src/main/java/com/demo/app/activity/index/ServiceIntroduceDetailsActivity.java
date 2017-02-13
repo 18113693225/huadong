@@ -1,24 +1,12 @@
 package com.demo.app.activity.index;
 
-
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebSettings.RenderPriority;
-import android.widget.ProgressBar;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.demo.app.R;
 import com.demo.app.activity.BaseActivity;
-import com.demo.app.util.Constents;
 import com.demo.app.util.TitleCommon;
 import com.joanzapata.pdfview.PDFView;
 import com.joanzapata.pdfview.listener.OnPageChangeListener;
-
-import java.io.File;
 
 
 public class ServiceIntroduceDetailsActivity extends BaseActivity implements OnPageChangeListener {
@@ -35,11 +23,11 @@ public class ServiceIntroduceDetailsActivity extends BaseActivity implements OnP
         setContentView(R.layout.index_service_introduce_details_layout);
         int position = this.getIntent().getIntExtra("position", 0);
         String title = "电力运维";
-        String path = JIAN_XIU;
+        String path = AN_QUAN;
         switch (position) {
             case 0:
                 title = "电力运维";
-                path = JIAN_XIU;
+                path = AN_QUAN;
                 break;
             case 1:
                 title = "电力检修";
@@ -47,15 +35,15 @@ public class ServiceIntroduceDetailsActivity extends BaseActivity implements OnP
                 break;
             case 2:
                 title = "电力抢修";
-                path = JIAN_XIU;
+                path = AN_QUAN;
                 break;
             case 3:
                 title = "电气调试";
-                path = JIAN_XIU;
+                path = AN_QUAN;
                 break;
             case 4:
                 title = "技术服务";
-                path = JIAN_XIU;
+                path = AN_QUAN;
                 break;
             case 5:
                 title = "输电线路运检";
