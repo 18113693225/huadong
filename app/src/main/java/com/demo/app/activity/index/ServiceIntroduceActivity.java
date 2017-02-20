@@ -22,22 +22,23 @@ import com.demo.app.util.TitleCommon;
 //服务介绍
 public class ServiceIntroduceActivity extends BaseActivity {
     private GridView gridView;
-    private int[] icon = {R.drawable.icon_electric_power_maintenance,
+    private int[] icon = {
             R.drawable.icon_electrical_test,
-            R.drawable.icon_power_lines_repair,
-            R.drawable.icon_power_operations,
-            R.drawable.icon_technical_services,
-            R.drawable.icon_transmission_line_inspection,
             R.drawable.icon_fire_power_maintenance,
             R.drawable.icon_water_power_maintenance,
+            R.drawable.icon_electric_power_maintenance,
             R.drawable.icon_sun_power_station,
+            R.drawable.icon_power_operations,
             R.drawable.icon_train_station,
+            R.drawable.icon_transmission_line_inspection,
+            R.drawable.icon_power_lines_repair,
             R.drawable.icon_two_tickets,
             R.drawable.icon_safety_culture_maintenance,
+            R.drawable.icon_technical_services,
             R.drawable.icon_law,
             R.drawable.icon_al};
-    private String[] iconName = {"技术咨询", "电力检修", "线路运检", "变电运维", "机电运维",
-            "风电运维", "火电运维", "水电运维", "光伏电站", "轨道交通", "两票管理", "安全文明", "法律法规", "事故案例"};
+    private String[] iconName = {"变电运维", "火电运维", "水电运维", "风电运维", "光伏电站",
+            "机电运维", "轨道交通", "输电线路", "电力检修", "两票管理", "安全文明", "技术咨询", "法律法规", "事故案例"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

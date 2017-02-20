@@ -33,56 +33,56 @@ public class ServiceIntroduceDetailsActivity extends BaseActivity implements OnP
         super.onCreate(savedInstanceState);
         setContentView(R.layout.index_service_introduce_details_layout);
         int position = this.getIntent().getIntExtra("position", 0);
-        String title = "技术咨询";
-        String path = JI_SHU;
+        String title = "变电运维";
+        String path = BIAN_DIAN;
         switch (position) {
             case 0:
-                title = "技术咨询";
-                path = BIAN_DIAN;
-                break;
-            case 1:
-                title = "电力检修";
-                path = JIAN_XIU;
-                break;
-            case 2:
-                title = "线路运检";
-                path = SHU_DIAN;
-                break;
-            case 3:
                 title = "变电运维";
                 path = BIAN_DIAN;
                 break;
-            case 4:
-                title = "机电运维";
-                path = JI_DIAN;
-                break;
-            case 5:
-                title = "风电运维";
-                path = FENG_DIAN;
-                break;
-            case 6:
+            case 1:
                 title = "火电运维";
                 path = HUO_DIAN;
                 break;
-            case 7:
+            case 2:
                 title = "水电运维";
                 path = SHUI_DIAN;
                 break;
-            case 8:
+            case 3:
+                title = "风电运维";
+                path = FENG_DIAN;
+                break;
+            case 4:
                 title = "光伏电站";
                 path = GUANG_FU;
                 break;
-            case 9:
+            case 5:
+                title = "机电运维";
+                path = JI_DIAN;
+                break;
+            case 6:
                 title = "轨道交通";
                 path = GUI_DAO;
                 break;
-            case 10:
+            case 7:
+                title = "输电线路";
+                path = SHU_DIAN;
+                break;
+            case 8:
+                title = "电力检修";
+                path = JIAN_XIU;
+                break;
+            case 9:
                 title = "两票管理";
                 path = LIANG_PIAO;
                 break;
-            case 11:
+            case 10:
                 title = "安全文明";
                 path = AN_QUAN;
+                break;
+            case 11:
+                title = "技术咨询";
+                path = JI_SHU;
                 break;
             case 12:
                 title = "法律法规";
