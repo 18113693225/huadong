@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="app_name">智能电力巡检</string>
+    <string name="app_name">电力物业</string>
     <string name="elec_name"><font color="red">*</font>姓名：</string>
     <string name="elec_sex"><font color="red">*</font>性别：</string>
     <string name="elec_ID"><font color="red">*</font>身份证：</string>

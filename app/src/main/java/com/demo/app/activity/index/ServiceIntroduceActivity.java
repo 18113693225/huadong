@@ -36,8 +36,8 @@ public class ServiceIntroduceActivity extends BaseActivity {
             R.drawable.icon_safety_culture_maintenance,
             R.drawable.icon_law,
             R.drawable.icon_al};
-    private String[] iconName = {"电力运维", "电力检修", "电力抢修", "电气调试", "技术服务",
-            "输电线路运检", "火电运维", "水电运维", "光伏电站", "轨道交通", "两票管理", "安全文明", "法律法规", "事故案例"};
+    private String[] iconName = {"技术咨询", "电力检修", "线路运检", "变电运维", "机电运维",
+            "风电运维", "火电运维", "水电运维", "光伏电站", "轨道交通", "两票管理", "安全文明", "法律法规", "事故案例"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +58,10 @@ public class ServiceIntroduceActivity extends BaseActivity {
                                     int position, long arg3) {
                 // TODO Auto-generated method stub
                 Intent i = new Intent();
-                if (5 < position && position != 11) {
-                    Toast.makeText(ServiceIntroduceActivity.this, "建设中...", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (5 < position && position != 11) {
+//                    Toast.makeText(ServiceIntroduceActivity.this, "建设中...", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
                 i.putExtra("position", position);
                 i.setClass(ServiceIntroduceActivity.this, ServiceIntroduceDetailsActivity.class);
                 startActivity(i);
