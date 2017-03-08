@@ -60,10 +60,10 @@ public class DXSBXSKContentListActivity extends BaseActivity {
         dqsbxskContentListView = (ListView) this
                 .findViewById(R.id.dqsbxskContentListView);
 
-        if (Constents.contentListMap.size() < btId + 1) {
-            adapter = new XSContentAdapter(this, getData(), btId);
+        if (!Constents.contentListMap.containsKey(type)) {
+            adapter = new XSContentAdapter(this, getData(), Integer.valueOf(type).intValue());
         } else {
-            adapter = new XSContentAdapter(this, Constents.contentListMap.get(btId + ""), btId);
+            adapter = new XSContentAdapter(this, Constents.contentListMap.get(type), btId);
         }
 
         dqsbxskContentListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);

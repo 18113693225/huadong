@@ -32,8 +32,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,7 +47,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class PowerRunXSKActivity extends BaseActivity {
-
     private CustomeEditText2 pname, ptype, runit, xsr;
     private TextView addDevice;
     private Button saveBtn;
@@ -56,6 +57,7 @@ public class PowerRunXSKActivity extends BaseActivity {
     public static String leibie = "";
     private Map<String, ArrayList<String>> photosMap = new HashMap<String, ArrayList<String>>();
     private List<String> LBs = new ArrayList<>();
+    private List<Integer> editTextIds = new ArrayList<>();
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             if (msg.what == 1) {
@@ -84,6 +86,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         xiangmu = "";
         leibie = "";
         LBs.clear();
+        editTextIds.clear();
         Constents.xskcontentList.clear();
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
@@ -155,8 +158,8 @@ public class PowerRunXSKActivity extends BaseActivity {
                                 }
                                 bean.setDevice_name(((CustomeEditText2) child).getEditTexTag());
                             } else if (tag.equals("pr_new_dnum")) {
-                                if (Constents.contentListMap.containsKey(i + "")) {
-                                    bean.setDeviceContentList(Constents.contentListMap.get(i + ""));
+                                if (Constents.contentListMap.containsKey(LBs.get(i) + "")) {
+                                    bean.setDeviceContentList(Constents.contentListMap.get(LBs.get(i) + ""));
                                 }
                                 bean.setEquipment_number(((CustomeEditText2) child).getText().toString());
                             } else if (tag.equals("pr_xsk_radioLinear")) {
@@ -323,9 +326,16 @@ public class PowerRunXSKActivity extends BaseActivity {
                     int id = data.getExtras().getInt("id");
                     if (ptypeValue == null && runitValue == null) {
                         leibie = id + "";
-                        if (!LBs.contains(leibie)) {
-                            LBs.add(leibie);
+                        if (editTextIds.contains(editTextId)) {
+                            int index = editTextIds.indexOf(editTextId);
+                            LBs.set(index, leibie);
+                        } else {
+                            editTextIds.add(editTextId);
+                            if (!LBs.contains(leibie)) {
+                                LBs.add(leibie);
+                            }
                         }
+
                     } else {
                         xiangmu = id + "";
                     }

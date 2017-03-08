@@ -44,6 +44,7 @@ public class SafetyCultureCheckActivity extends BaseActivity {
     public static String xiangmu = "";
     public static String leibie = "";
     private List<String> LBs = new ArrayList<>();
+    private List<Integer> editTextIds = new ArrayList<>();
     private SharedPreferences sp;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -70,6 +71,7 @@ public class SafetyCultureCheckActivity extends BaseActivity {
         xiangmu = "";
         leibie = "";
         LBs.clear();
+        editTextIds.clear();
         Constents.xskcontentList.clear();
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
@@ -136,8 +138,8 @@ public class SafetyCultureCheckActivity extends BaseActivity {
                                 }
                                 bean.setDevice_id(((CustomeEditText2) child).getEditTexTag());
                             } else if (tag.equals("pr_new_dnum")) {
-                                if (Constents.contentListMap.containsKey(i + "")) {
-                                    bean.setDeviceContentList(Constents.contentListMap.get(i + ""));
+                                if (Constents.contentListMap.containsKey(LBs.get(i) + "")) {
+                                    bean.setDeviceContentList(Constents.contentListMap.get(LBs.get(i) + ""));
                                 }
                                 bean.setDevice_number(((CustomeEditText2) child).getText().toString());
                             } else if (tag.equals("pr_xsk_radioLinear")) {
@@ -241,8 +243,14 @@ public class SafetyCultureCheckActivity extends BaseActivity {
 
                     if (ptypeValue == null && runitValue == null) {
                         leibie = id + "";
-                        if (!LBs.contains(leibie)) {
-                            LBs.add(leibie);
+                        if (editTextIds.contains(editTextId)) {
+                            int index = editTextIds.indexOf(editTextId);
+                            LBs.set(index, leibie);
+                        } else {
+                            editTextIds.add(editTextId);
+                            if (!LBs.contains(leibie)) {
+                                LBs.add(leibie);
+                            }
                         }
                     } else {
                         xiangmu = id + "";
