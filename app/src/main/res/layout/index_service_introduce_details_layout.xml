@@ -7,8 +7,10 @@
 
     <include layout="@layout/common_title" />
 
+
     <com.joanzapata.pdfview.PDFView
         android:id="@+id/pdfview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </LinearLayout>

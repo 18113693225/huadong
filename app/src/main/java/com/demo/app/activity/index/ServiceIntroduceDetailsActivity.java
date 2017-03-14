@@ -27,6 +27,7 @@ public class ServiceIntroduceDetailsActivity extends BaseActivity implements OnP
     public static final String FA_LV = "falvfagui.pdf";
     public static final String SHI_GU = "shiguanli.pdf";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -116,4 +117,5 @@ public class ServiceIntroduceDetailsActivity extends BaseActivity implements OnP
     public void onPageChanged(int page, int pageCount) {
         pageNumber = page;
     }
+
 }
