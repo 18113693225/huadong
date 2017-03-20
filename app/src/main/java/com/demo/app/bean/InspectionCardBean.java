@@ -30,6 +30,34 @@ public class InspectionCardBean extends DateBean {
     // 设备名称
     private int device_id;
     private String device_name = "";
+    //坐标
+    private String equipment_check_time = "";
+    private String longitude = "";
+    private String latitude = "";
+
+    public String getEquipment_check_time() {
+        return equipment_check_time;
+    }
+
+    public void setEquipment_check_time(String equipment_check_time) {
+        this.equipment_check_time = equipment_check_time;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
     //设备内容集合
     /**
      * 设备内容集合

@@ -13,9 +13,9 @@ import java.util.Map;
 public class Constents {
 
     //网络请求 生产环境
-    public static final String REQUEST_URL = "http://api.sc-huadong.cn:8686";
+//    public static final String REQUEST_URL = "http://api.sc-huadong.cn:8686";
     //测试环境
-//    public static final String REQUEST_URL = "http://192.168.1.94:8080/electricproperty";
+    public static final String REQUEST_URL = "http://192.168.1.164:8080/electricproperty";
     public static final String SHARE_CONFIG = "ele";
 
     /**

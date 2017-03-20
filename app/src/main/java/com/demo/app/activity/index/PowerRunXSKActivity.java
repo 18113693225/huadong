@@ -55,6 +55,9 @@ public class PowerRunXSKActivity extends BaseActivity {
     public static String leibie = "";
     private Map<String, ArrayList<String>> photosMap = new HashMap<String, ArrayList<String>>();
     private List<String> LBs = new ArrayList<>();
+    private List<String> Times = new ArrayList<>();
+    private List<String> Latitudes = new ArrayList<>();
+    private List<String> Longitudes = new ArrayList<>();
     private List<Integer> editTextIds = new ArrayList<>();
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -85,6 +88,9 @@ public class PowerRunXSKActivity extends BaseActivity {
         leibie = "";
         LBs.clear();
         editTextIds.clear();
+        Times.clear();
+        Latitudes.clear();
+        Longitudes.clear();
         Constents.xskcontentList.clear();
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
@@ -120,10 +126,10 @@ public class PowerRunXSKActivity extends BaseActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
                 int count = commonLayout.getChildCount();
-                if (Constents.contentListMap.size() < count) {
-                    Toast.makeText(PowerRunXSKActivity.this, "最后一条设备未添加内容", Toast.LENGTH_LONG).show();
-                    return;
-                }
+//                if (Constents.contentListMap.size() < count) {
+//                    Toast.makeText(PowerRunXSKActivity.this, "最后一条设备未添加内容", Toast.LENGTH_LONG).show();
+//                    return;
+//                }
                 int pnameValue = pname.getEditTexTag();
                 int ptypeValue = ptype.getEditTexTag();
                 int runitValue = runit.getEditTexTag();
@@ -149,6 +155,9 @@ public class PowerRunXSKActivity extends BaseActivity {
                         for (int j = 0; j < countp; j++) {
                             View child = childP.getChildAt(j);
                             Object tag = child.getTag();
+                            bean.setEquipment_check_time(Times.get(i));
+                            bean.setLatitude(Latitudes.get(i));
+                            bean.setLongitude(Longitudes.get(i));
                             if (tag.equals("pr_new_dname")) {
                                 if (((CustomeEditText2) child).getEditTexTag() == -1) {
                                     handler.obtainMessage(3).sendToTarget();
@@ -225,11 +234,11 @@ public class PowerRunXSKActivity extends BaseActivity {
      */
     @SuppressLint("NewApi")
     public void addDevice() {
-        final int count = commonLayout.getChildCount();
-        if (Constents.contentListMap.size() < count) {
-            Toast.makeText(PowerRunXSKActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
-            return;
-        }
+//        final int count = commonLayout.getChildCount();
+//        if (Constents.contentListMap.size() < count) {
+//            Toast.makeText(PowerRunXSKActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
+//            return;
+//        }
         final View child = getLayoutInflater().inflate(R.layout.common_prxsk_layout, null);
         CustomeEditText2 cdname = (CustomeEditText2) child.findViewById(R.id.pr_new_dname);
         cdname.setId(View.generateViewId());
@@ -324,16 +333,19 @@ public class PowerRunXSKActivity extends BaseActivity {
                     int id = data.getExtras().getInt("id");
                     if (ptypeValue == null && runitValue == null) {
                         leibie = id + "";
+                        Calendar calendar = Calendar.getInstance();
+                        String time = (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(calendar.getTime());
+
                         if (editTextIds.contains(editTextId)) {
                             int index = editTextIds.indexOf(editTextId);
                             LBs.set(index, leibie);
                         } else {
                             editTextIds.add(editTextId);
-                            if (!LBs.contains(leibie)) {
-                                LBs.add(leibie);
-                            }
+                            LBs.add(leibie);
+                            Times.add(time);
+                            Latitudes.add(sp.getString("latitude", ""));
+                            Longitudes.add(sp.getString("longitude", ""));
                         }
-
                     } else {
                         xiangmu = id + "";
                     }
