@@ -1,12 +1,5 @@
 package com.demo.app.service;
 
-import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
-import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
-import com.amap.api.location.AMapLocationListener;
-import com.amap.api.location.APSService;
-import com.demo.app.util.Constents;
 
 import android.app.Notification;
 import android.app.Service;
@@ -16,15 +9,23 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
 
-public class BackgroundService extends Service implements AMapLocationListener {
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationListener;
+import com.amap.api.location.APSService;
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.demo.app.util.Constents;
+
+public class BackgroundService extends Service implements BDLocationListener {
 
     private final static String TAG = "###Background service###";
     // 声明AMapLocationClient类对象
-    private AMapLocationClient mLocationClient = null;
+    private LocationClientOption option = null;
     // 声明mLocationOption对象
-    private AMapLocationClientOption mLocationOption = null;
+    private LocationClient locationClient = null;
 
     private SharedPreferences sp;
 
@@ -46,7 +47,7 @@ public class BackgroundService extends Service implements AMapLocationListener {
     @Override
     public void onDestroy() {
         // TODO Auto-generated method stub
-        mLocationClient.stopLocation();
+        locationClient.stop();
 //		mLocationClient.onDestroy();
         super.onDestroy();
     }
@@ -56,28 +57,21 @@ public class BackgroundService extends Service implements AMapLocationListener {
      */
     public void setLocation() {
         // 初始化定位
-        mLocationClient = new AMapLocationClient(getApplicationContext());
+        locationClient = new LocationClient(getApplicationContext());
         // 设置定位回调监听
-        mLocationClient.setLocationListener(this);
-        // 初始化定位参数
-        mLocationOption = new AMapLocationClientOption();
-        // 设置定位模式为高精度模式，Battery_Saving为低功耗模式，Device_Sensors是仅设备模式
-        mLocationOption.setLocationMode(AMapLocationMode.Hight_Accuracy);
-        mLocationOption.setLocationMode(AMapLocationMode.Battery_Saving);
-        // 设置是否返回地址信息（默认返回地址信息）
-        mLocationOption.setNeedAddress(true);
-        // 设置是否只定位一次,默认为false
-        mLocationOption.setOnceLocation(false);
-        // 设置是否强制刷新WIFI，默认为强制刷新
-        mLocationOption.setWifiActiveScan(false);
-        // 设置是否允许模拟位置,默认为false，不允许模拟位置
-        mLocationOption.setMockEnable(false);
-        // 设置定位间隔,单位毫秒,默认为2000ms
-        mLocationOption.setInterval(2 * 1000);
-        // 给定位客户端对象设置定位参数
-        mLocationClient.setLocationOption(mLocationOption);
-        // 启动定位
-        mLocationClient.startLocation();
+        locationClient.registerLocationListener(this);
+        // 初始化定位
+        option = new LocationClientOption();
+        option.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
+        option.setCoorType("bd09ll");
+        option.setScanSpan(2 * 1000);
+        option.setIsNeedAddress(true);
+        option.setOpenGps(true);
+        option.setIsNeedLocationDescribe(true);
+        option.setTimeOut(10000);
+        locationClient.setLocOption(option);
+        locationClient.start();
+        locationClient.requestLocation();
     }
 
     @Override
@@ -93,20 +87,26 @@ public class BackgroundService extends Service implements AMapLocationListener {
         return super.onStartCommand(intent, flags, startId);
     }
 
+
     @Override
-    public void onLocationChanged(AMapLocation amapLocation) {
-        // TODO Auto-generated method stub
-        if (amapLocation != null) {
-            if (amapLocation.getErrorCode() == 0) {
-                // 定位成功回调信息，设置相关消息
-                // 定位成功把用户坐标存放起来
-                sp.edit().putString("currentAddress", amapLocation.getAddress()).commit();
-                sp.edit().putString("longitude", amapLocation.getLongitude() + "").commit();
-                sp.edit().putString("latitude", amapLocation.getLatitude() + "").commit();
-            } else {
-                // 显示错误信息ErrCode是错误码，errInfo是错误信息，详见错误码表。
-                sp.edit().putString("currentAddress", "定位失败").commit();
-            }
+    public void onReceiveLocation(BDLocation bdLocation) {
+        int type = bdLocation.getLocType();
+        Log.i("TAG", "定位返回码：" + type);
+        if (type == 61 || type == 66 || type == 161) {
+            // 定位成功回调信息，设置相关消息
+            // 定位成功把用户坐标存放起来
+            sp.edit().putString("currentAddress", bdLocation.getAddrStr()).commit();
+            sp.edit().putString("longitude", bdLocation.getLongitude() + "").commit();
+            sp.edit().putString("latitude", bdLocation.getLatitude() + "").commit();
+        } else {
+            // 显示错误信息ErrCode是错误码，errInfo是错误信息，详见错误码表。
+            sp.edit().putString("currentAddress", "定位失败").commit();
         }
+
+    }
+
+    @Override
+    public void onConnectHotSpotMessage(String s, int i) {
+
     }
 }

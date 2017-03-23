@@ -44,6 +44,7 @@ public class SafetyCultureHJActivity extends BaseActivity {
     public static String xiangmu = "";
     public static String leibie = "";
     private List<String> LBs = new ArrayList<>();
+    private List<Integer> editTextIds = new ArrayList<>();
     private SharedPreferences sp;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
@@ -70,6 +71,7 @@ public class SafetyCultureHJActivity extends BaseActivity {
         xiangmu = "";
         leibie = "";
         LBs.clear();
+        editTextIds.clear();
         Constents.xskcontentList.clear();
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
@@ -133,8 +135,8 @@ public class SafetyCultureHJActivity extends BaseActivity {
                                 }
                                 bean.setDevice_id(((CustomeEditText2) child).getEditTexTag());
                             } else if (tag.equals("pr_new_dnum")) {
-                                if (Constents.contentListMap.containsKey(i + "")) {
-                                    bean.setDeviceContentList(Constents.contentListMap.get(i + ""));
+                                if (Constents.contentListMap.containsKey(LBs.get(i) + "")) {
+                                    bean.setDeviceContentList(Constents.contentListMap.get(LBs.get(i) + ""));
                                 }
                                 bean.setDevice_number(((CustomeEditText2) child).getText().toString());
                             } else if (tag.equals("pr_xsk_radioLinear")) {
@@ -185,11 +187,11 @@ public class SafetyCultureHJActivity extends BaseActivity {
      */
     @SuppressLint("NewApi")
     public void addDevice() {
-        final int count = commonLayout.getChildCount();
-        if (Constents.contentListMap.size() < count) {
-            Toast.makeText(SafetyCultureHJActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
-            return;
-        }
+//        final int count = commonLayout.getChildCount();
+//        if (Constents.contentListMap.size() < count) {
+//            Toast.makeText(SafetyCultureHJActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
+//            return;
+//        }
         final View child = getLayoutInflater().inflate(R.layout.common_prxsk_layout, null);
         Button pz = (Button) child.findViewById(R.id.poto_pz);
         pz.setVisibility(View.GONE);
@@ -198,7 +200,6 @@ public class SafetyCultureHJActivity extends BaseActivity {
         RadioButton cnormalButton = (RadioButton) child.findViewById(R.id.pr_new_normalButton);
         cnormalButton.setChecked(true);
         CustomeEditText2 ce = (CustomeEditText2) child.findViewById(R.id.pr_new_dnum);
-
         Button bt = (Button) ce.findViewById(R.id.custome_button2);
         if (ce.getTag().equals("pr_new_dnum")) {
             bt.setOnClickListener(new OnClickListener() {
@@ -235,10 +236,13 @@ public class SafetyCultureHJActivity extends BaseActivity {
                     String ptypeValue = data.getExtras().getString("ptype");
                     String runitValue = data.getExtras().getString("cname");
                     int id = data.getExtras().getInt("id");
-
                     if (ptypeValue == null && runitValue == null) {
                         leibie = id + "";
-                        if (!LBs.contains(leibie)) {
+                        if (editTextIds.contains(editTextId)) {
+                            int index = editTextIds.indexOf(editTextId);
+                            LBs.set(index, leibie);
+                        } else {
+                            editTextIds.add(editTextId);
                             LBs.add(leibie);
                         }
                     } else {
@@ -248,7 +252,6 @@ public class SafetyCultureHJActivity extends BaseActivity {
                         ptype.setText(ptypeValue);
                         runit.setText(runitValue);
                     }
-
                     if (editTextId != -1) {
                         CustomeEditText2 et = (CustomeEditText2) findViewById(editTextId);
                         et.setText(text);

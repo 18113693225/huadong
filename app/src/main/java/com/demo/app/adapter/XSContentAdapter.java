@@ -84,7 +84,7 @@ public class XSContentAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         holder.text.setText(datas.get(position).get("text").toString());
-
+        Constents.contentListMap.put(btId + "", datas);
         if (datas.get(position).get("select_val").toString().equals("1")) {
             holder.box.setChecked(true);
             holder.text.setBackgroundColor(Color.WHITE);

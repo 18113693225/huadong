@@ -85,7 +85,6 @@ public class SafetyCultureCheckActivity extends BaseActivity {
         xsr = (CustomeEditText2) this.findViewById(R.id.sc_check_xsr);
         xsr.setText(sp.getString("username", ""));
 //		safetyselect = (CustomeEditText2)this.findViewById(R.id.sc_check_safetyselect);
-
         addDevice = (TextView) this.findViewById(R.id.sc_check_addDevice);
         addDevice.setOnClickListener(new OnClickListener() {
 
@@ -101,7 +100,6 @@ public class SafetyCultureCheckActivity extends BaseActivity {
             }
         });
         addDevice();
-
         findViewById(R.id.sc_check_saveBtn).setOnClickListener(new OnClickListener() {
 
             @Override
@@ -125,7 +123,6 @@ public class SafetyCultureCheckActivity extends BaseActivity {
                         bean.setCreate_time(time);
                         bean.setFill_in_user_id(xsrValue);
 //						bean.setSecurity_options(security);
-
                         LinearLayout childP = (LinearLayout) commonLayout.getChildAt(i);
                         int countp = childP.getChildCount();
                         for (int j = 0; j < countp; j++) {
@@ -190,11 +187,11 @@ public class SafetyCultureCheckActivity extends BaseActivity {
      */
     @SuppressLint("NewApi")
     public void addDevice() {
-        final int count = commonLayout.getChildCount();
-        if (Constents.contentListMap.size() < count) {
-            Toast.makeText(SafetyCultureCheckActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
-            return;
-        }
+        //       final int count = commonLayout.getChildCount();
+//        if (Constents.contentListMap.size() < count) {
+//            Toast.makeText(SafetyCultureCheckActivity.this, "请选择内容后再添加设备", Toast.LENGTH_LONG).show();
+//            return;
+//        }
         final View child = getLayoutInflater().inflate(R.layout.common_prxsk_layout, null);
         Button pz = (Button) child.findViewById(R.id.poto_pz);
         pz.setVisibility(View.GONE);
@@ -203,7 +200,6 @@ public class SafetyCultureCheckActivity extends BaseActivity {
         RadioButton cnormalButton = (RadioButton) child.findViewById(R.id.pr_new_normalButton);
         cnormalButton.setChecked(true);
         CustomeEditText2 ce = (CustomeEditText2) child.findViewById(R.id.pr_new_dnum);
-
         Button bt = (Button) ce.findViewById(R.id.custome_button2);
         if (ce.getTag().equals("pr_new_dnum")) {
             bt.setOnClickListener(new OnClickListener() {
@@ -240,7 +236,6 @@ public class SafetyCultureCheckActivity extends BaseActivity {
                     String ptypeValue = data.getExtras().getString("ptype");
                     String runitValue = data.getExtras().getString("cname");
                     int id = data.getExtras().getInt("id");
-
                     if (ptypeValue == null && runitValue == null) {
                         leibie = id + "";
                         if (editTextIds.contains(editTextId)) {
@@ -248,9 +243,7 @@ public class SafetyCultureCheckActivity extends BaseActivity {
                             LBs.set(index, leibie);
                         } else {
                             editTextIds.add(editTextId);
-                            if (!LBs.contains(leibie)) {
-                                LBs.add(leibie);
-                            }
+                            LBs.add(leibie);
                         }
                     } else {
                         xiangmu = id + "";

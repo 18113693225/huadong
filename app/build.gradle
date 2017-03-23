@@ -56,7 +56,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:recyclerview-v7:25.2.0'
     compile files('libs/AMap_3DMap_V3.3.1_20160419.jar')
-    compile files('libs/AMap_Location_v2.3.0_20160112.jar')
     compile files('libs/fastjson-1.1.40.jar')
     compile files('libs/httpmime-4.1.1.jar')
     compile files('libs/libammsdk.jar')

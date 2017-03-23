@@ -115,11 +115,18 @@
         <!-- push结束 -->
 
         <meta-data
-            android:name="com.amap.api.v2.apikey"
-            android:value="8778b2542d0dcb258d07780d110b62ce" />
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="7TGWUOptz6bo7bRrPTpLyoODWTjwBNyp" />
+
+        <!--<meta-data-->
+        <!--android:name="com.amap.api.v2.apikey"-->
+        <!--android:value="8778b2542d0dcb258d07780d110b62ce" />-->
 
         <service android:name=".service.BackgroundService" />
-        <service android:name="com.amap.api.location.APSService" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
 
         <activity
             android:name=".activity.WelcomeActivity"
