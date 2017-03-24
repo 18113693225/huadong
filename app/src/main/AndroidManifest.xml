@@ -8,6 +8,10 @@
         android:minSdkVersion="17"
         android:targetSdkVersion="24" />
 
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,7 +24,6 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
-    <!-- <uses-permission android:name="android.permission.WAKE_LOCK" /> -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <!-- 用于申请调用A-GPS模块 -->
@@ -118,11 +121,7 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="7TGWUOptz6bo7bRrPTpLyoODWTjwBNyp" />
 
-        <!--<meta-data-->
-        <!--android:name="com.amap.api.v2.apikey"-->
-        <!--android:value="8778b2542d0dcb258d07780d110b62ce" />-->
 
-        <service android:name=".service.BackgroundService" />
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

@@ -335,7 +335,6 @@ public class PowerRunXSKActivity extends BaseActivity {
                         leibie = id + "";
                         Calendar calendar = Calendar.getInstance();
                         String time = (new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")).format(calendar.getTime());
-
                         if (editTextIds.contains(editTextId)) {
                             int index = editTextIds.indexOf(editTextId);
                             LBs.set(index, leibie);

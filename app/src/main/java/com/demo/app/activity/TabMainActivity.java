@@ -6,10 +6,13 @@ package com.demo.app.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
 import com.demo.app.R;
 import com.demo.app.activity.index.IndexFragment;
 import com.demo.app.activity.user.UserLoginFragment;
-import com.demo.app.service.BackgroundService;
+
+import com.demo.app.service.PositionService;
 import com.demo.app.util.Constents;
 import com.sina.weibo.sdk.api.share.BaseResponse;
 import com.sina.weibo.sdk.api.share.IWeiboHandler.Response;
@@ -22,8 +25,6 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,10 +32,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -46,7 +47,7 @@ import android.widget.Toast;
 /**
  * @author S
  */
-public class TabMainActivity extends FragmentActivity implements Response {
+public class TabMainActivity extends FragmentActivity implements Response, BDLocationListener {
     public static FragmentTabHost fragmentTabHost;
     public static ViewPager viewPage;
     private List<Fragment> list = new ArrayList<Fragment>();
@@ -59,7 +60,7 @@ public class TabMainActivity extends FragmentActivity implements Response {
     private static Long start;
     private static Long end;
     private IWeiboShareAPI mWeiboShareAPI;
-    private boolean serviceIsRunning = false;
+    PositionService mPositionService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,32 +69,6 @@ public class TabMainActivity extends FragmentActivity implements Response {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.tab_main_layout);
         sp = getSharedPreferences(Constents.SHARE_CONFIG, Context.MODE_PRIVATE);
-//		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-        /*viewPage = (ViewPager) this.findViewById(R.id.viewPage);
-        viewPage.setOnPageChangeListener(new OnPageChangeListener() {
-
-			@Override
-			public void onPageSelected(int index) {
-				// TODO Auto-generated method stub
-				TabWidget widget = fragmentTabHost.getTabWidget();
-	            int oldFocusability = widget.getDescendantFocusability();
-	            widget.setDescendantFocusability(ViewGroup.FOCUS_BLOCK_DESCENDANTS);
-	            fragmentTabHost.setCurrentTab(index);
-	            widget.setDescendantFocusability(oldFocusability);
-			}
-
-			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onPageScrollStateChanged(int arg0) {
-				// TODO Auto-generated method stub
-
-			}
-		});*/
         // 实例化tabhost
         fragmentTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         fragmentTabHost.setup(this, getSupportFragmentManager(), R.id.maincontent);
@@ -132,20 +107,12 @@ public class TabMainActivity extends FragmentActivity implements Response {
         if (savedInstanceState != null) {
             mWeiboShareAPI.handleWeiboResponse(getIntent(), this);
         }
+        if (null == mPositionService) {
+            mPositionService = new PositionService(this);
+            mPositionService.registerListener(this);
+            mPositionService.start();
+        }
 
-        ActivityManager manager = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
-        for (RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-            System.out.println(service.service.getClassName());
-            if ("com.demo.app.service.BackgroundService".equals(service.service.getClassName())) {
-                System.out.println("++++++++++++service is running++++++++++++++++++" + service.service.getClassName());
-                serviceIsRunning = true;
-                break;
-            }
-        }
-        if (!serviceIsRunning) {
-            System.out.println("++++++++++++app start service ++++++++++++++++++");
-            startService(new Intent(this, BackgroundService.class));
-        }
     }
 
     private View getView(int i) {
@@ -175,24 +142,6 @@ public class TabMainActivity extends FragmentActivity implements Response {
 //		viewPage.setAdapter(new MyAdapter(getSupportFragmentManager()));
     }
 
-    class MyAdapter extends FragmentPagerAdapter {
-
-        public MyAdapter(FragmentManager fm) {
-            super(fm);
-            // TODO Auto-generated constructor stub
-        }
-
-        @Override
-        public Fragment getItem(int arg0) {
-            return list.get(arg0);
-        }
-
-        @Override
-        public int getCount() {
-            return list.size();
-        }
-
-    }
 
     @Override
     public void onBackPressed() {
@@ -221,11 +170,13 @@ public class TabMainActivity extends FragmentActivity implements Response {
     protected void onDestroy() {
         // TODO Auto-generated method stub
         super.onDestroy();
-        System.out.println("onDestroy");
         sp.edit().putBoolean("openApk", false).commit();
         sp.edit().putBoolean("hasLogin", false).commit();
         sp.edit().putString("user_project_id", "-1").commit();
-        stopService(new Intent(this, BackgroundService.class));
+        if (mPositionService != null) {
+            mPositionService.unRegisterListener();
+            mPositionService.stop();
+        }
     }
 
     /**
@@ -286,4 +237,22 @@ public class TabMainActivity extends FragmentActivity implements Response {
             Toast.makeText(TabMainActivity.this, "分享失败！", Toast.LENGTH_SHORT).show();
         }
     };
+
+    @Override
+    public void onReceiveLocation(BDLocation bdLocation) {
+        int type = bdLocation.getLocType();
+        if (type == 61 || type == 66 || type == 161) {
+            sp.edit().putString("currentAddress", bdLocation.getAddrStr()).commit();
+            sp.edit().putString("longitude", bdLocation.getLongitude() + "").commit();
+            sp.edit().putString("latitude", bdLocation.getLatitude() + "").commit();
+            Log.i("TAG", "定位返回码：" + type + "  经度:" + bdLocation.getLongitude() + "纬度:" + bdLocation.getLatitude());
+        } else {
+            sp.edit().putString("currentAddress", "定位失败").commit();
+        }
+    }
+
+    @Override
+    public void onConnectHotSpotMessage(String s, int i) {
+
+    }
 }
