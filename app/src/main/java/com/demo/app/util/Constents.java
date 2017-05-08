@@ -34,50 +34,6 @@ public class Constents {
      */
     public static final String Qq_APP_ID = "1105717734";
     /**
-     * 保存项目ID
-     */
-    public static int current_project_id = 0;
-    /**
-     * 保存设备ID
-     */
-    public static int current_device_id = 0;
-
-    /**
-     * 存放不同设备巡视卡内容
-     */
-    public static List<Map<Object, Object>> xscontentList = new ArrayList<Map<Object, Object>>();
-
-    /**
-     * 存放不同设备巡视卡错误的内容
-     */
-    public static List<Map<Object, Object>> xserrorcontentList = new ArrayList<Map<Object, Object>>();
-    public static Map<String, ArrayList<Map<Object, Object>>> contentListMap = new HashMap<String, ArrayList<Map<Object, Object>>>();
-    /**
-     * 存放所有巡视卡(上传使用)
-     */
-    public static List<List<Map<Object, Object>>> xskcontentList = new ArrayList<>();
-
-    /**
-     * 存放不同设备巡视卡内容，检修任务使用
-     */
-    public static List<Map<Object, Object>> jxcontentList = new ArrayList<Map<Object, Object>>();
-
-    /**
-     * 存放当项目ID下设备个数
-     */
-    public static int devicenum = 0;
-
-    /**
-     * 存放不同的项目名称
-     */
-    public static int xmname;
-
-    /**
-     * 存放不同的类别名称
-     */
-    public static int lbname;
-
-    /**
      * 枚举
      */
     //类别
@@ -92,8 +48,6 @@ public class Constents {
     public static final String ENUM_TYPE_COOPERATION_PROFESSIONAL = "{'1':'项目经理','2','电气自动化','3','一次安装','4','二次安装','5','电气调试','6','继电保护','7','高压试验','8','其他','9':'运行','10':'检修'}";
     //相关证书
     public static final String ENUM_TYPE_COOPERATION_CERTIFICATE = "{'1':'初级职称','2','中级职称','3','高级职称','4','低压电工','5','高压电工','6','特种作业证','7','继电保护','8','其他'}";
-
-
     /**
      * 关键字定义 定义的数字将和数据库表e_constants对应
      */
@@ -105,4 +59,41 @@ public class Constents {
     public static final int TYPE_CERTIFICATE = 105; // 证书
     public static final int TYPE_PROJECT_TYPE = 106; // 项目类别
     public static final int TYPE_TOOL = 107; // 工器具
+    /**
+     * 保存项目ID
+     */
+    public static int current_project_id = 0;
+    /**
+     * 保存设备ID
+     */
+    public static int current_device_id = 0;
+    /**
+     * 存放不同设备巡视卡内容
+     */
+    public static List<Map<Object, Object>> xscontentList = new ArrayList<Map<Object, Object>>();
+    /**
+     * 存放不同设备巡视卡错误的内容
+     */
+    public static List<Map<Object, Object>> xserrorcontentList = new ArrayList<Map<Object, Object>>();
+    public static Map<String, ArrayList<Map<Object, Object>>> contentListMap = new HashMap<String, ArrayList<Map<Object, Object>>>();
+    /**
+     * 存放所有巡视卡(上传使用)
+     */
+    public static List<List<Map<Object, Object>>> xskcontentList = new ArrayList<>();
+    /**
+     * 存放不同设备巡视卡内容，检修任务使用
+     */
+    public static List<Map<Object, Object>> jxcontentList = new ArrayList<Map<Object, Object>>();
+    /**
+     * 存放当项目ID下设备个数
+     */
+    public static int devicenum = 0;
+    /**
+     * 存放不同的项目名称
+     */
+    public static int xmname;
+    /**
+     * 存放不同的类别名称
+     */
+    public static int lbname;
 }

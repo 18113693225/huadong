@@ -1,16 +1,6 @@
 package com.demo.app.network;
 
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.http.client.ClientProtocolException;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -40,24 +30,30 @@ import com.demo.app.bean.WorkTicketBean;
 import com.demo.app.util.Common;
 import com.google.gson.Gson;
 
+import org.apache.http.client.ClientProtocolException;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 
 public class NetworkData {
 
-    private static NetworkData INSTANCE = null;
-
     private static final String TAG = "NetworkData";
-
     private static final String LIST = "List";
     private static final String ADD = "Add";
     private static final String UPDATE = "Update";
     private static final String DELETE = "Delete";
+    private static NetworkData INSTANCE = null;
 
     //网络请求锁
 //	private boolean regisLock = false ,loginLock = false , smsCodelock = false , describeInfolock = false ,downLoadFilelock = false ,
 //			dateBeanByIDlock = false ,dateBeanListlock = false,dateBeanAddlock = false,dateBeanUpdatelock = false,dateBeanDeletelock = false,
 //			describeInfoByIDlock = false ,updatePasswordlock = false ,consultationlock = false 
 //			;
-
 
     public static NetworkData getInstance() {
 //		if(INSTANCE == null)

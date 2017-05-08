@@ -1,31 +1,5 @@
 package com.demo.app.activity.index;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
-import org.simple.eventbus.Subscriber;
-
-import com.demo.app.R;
-import com.demo.app.activity.BaseActivity;
-import com.demo.app.activity.TabMainActivity;
-import com.demo.app.bean.DateBean;
-import com.demo.app.bean.InspectionCardBean;
-import com.demo.app.network.NetworkData;
-import com.demo.app.network.NetworkResponceFace;
-import com.demo.app.util.Constents;
-import com.demo.app.util.PreferenceUtils;
-import com.demo.app.util.TitleCommon;
-import com.demo.app.view.CustomeEditText2;
-import com.demo.app.view.PublishActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -44,15 +18,40 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.demo.app.R;
+import com.demo.app.activity.BaseActivity;
+import com.demo.app.activity.TabMainActivity;
+import com.demo.app.bean.DateBean;
+import com.demo.app.bean.InspectionCardBean;
+import com.demo.app.network.NetworkData;
+import com.demo.app.network.NetworkResponceFace;
+import com.demo.app.util.Constents;
+import com.demo.app.util.PreferenceUtils;
+import com.demo.app.util.TitleCommon;
+import com.demo.app.view.CustomeEditText2;
+import com.demo.app.view.PublishActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.simple.eventbus.EventBus;
+import org.simple.eventbus.Subscriber;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class PowerRunXSKActivity extends BaseActivity {
+    public static String xiangmu = "";
+    public static String leibie = "";
     private CustomeEditText2 pname, ptype, runit, xsr;
     private TextView addDevice;
     private Button saveBtn;
     private LinearLayout commonLayout;
     private int isok = 1;
     private SharedPreferences sp;
-    public static String xiangmu = "";
-    public static String leibie = "";
     private Map<String, ArrayList<String>> photosMap = new HashMap<String, ArrayList<String>>();
     private List<String> LBs = new ArrayList<>();
     private List<String> Times = new ArrayList<>();

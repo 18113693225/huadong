@@ -1,13 +1,5 @@
 package com.demo.app.adapter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import com.demo.app.R;
-import com.demo.app.util.Constents;
-import com.google.gson.annotations.Since;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
@@ -17,6 +9,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
+
+import com.demo.app.R;
+import com.demo.app.util.Constents;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class XSContentAdapter extends BaseAdapter {
 
