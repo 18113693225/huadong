@@ -30,10 +30,12 @@
 
 
     <LinearLayout
+        android:id="@+id/err_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="6dp"
         android:background="@color/white"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <LinearLayout
@@ -56,6 +58,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@color/transparent"
+                android:hint="请输入"
                 android:paddingLeft="10dp"
                 android:paddingRight="14dp"
                 android:singleLine="true"

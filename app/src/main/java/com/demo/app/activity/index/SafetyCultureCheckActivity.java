@@ -1,14 +1,5 @@
 package com.demo.app.activity.index;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Map;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -35,14 +26,22 @@ import com.demo.app.util.Constents;
 import com.demo.app.util.TitleCommon;
 import com.demo.app.view.CustomeEditText2;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 public class SafetyCultureCheckActivity extends BaseActivity {
+    public static String xiangmu = "";
+    public static String leibie = "";
     private CustomeEditText2 pname, ptype, runit, xsr/*,safetyselect*/;
     private TextView addDevice;
     private Button saveBtn;
     private LinearLayout commonLayout;
     private int isok = 1;
-    public static String xiangmu = "";
-    public static String leibie = "";
     private List<String> LBs = new ArrayList<>();
     private List<Integer> editTextIds = new ArrayList<>();
     private SharedPreferences sp;
