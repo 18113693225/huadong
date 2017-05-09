@@ -241,6 +241,14 @@ public class PowerRunXSKActivity extends BaseActivity {
         final View child = getLayoutInflater().inflate(R.layout.common_prxsk_layout, null);
         LinearLayout ll = (LinearLayout) child.findViewById(R.id.err_ll);
         ll.setVisibility(View.VISIBLE);
+        Button errBt = (Button) child.findViewById(R.id.err_bt);
+        errBt.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(PowerRunXSKActivity.this, ErrContentListActivity.class);
+                startActivity(i);
+            }
+        });
         CustomeEditText2 cdname = (CustomeEditText2) child.findViewById(R.id.pr_new_dname);
         cdname.setId(View.generateViewId());
         Button pz = (Button) child.findViewById(R.id.poto_pz);
