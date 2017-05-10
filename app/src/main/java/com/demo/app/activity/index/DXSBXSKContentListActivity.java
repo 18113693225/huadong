@@ -1,15 +1,5 @@
 package com.demo.app.activity.index;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.simple.eventbus.EventBus;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,6 +14,14 @@ import com.demo.app.network.NetworkData;
 import com.demo.app.network.NetworkResponceFace;
 import com.demo.app.util.Constents;
 import com.demo.app.util.TitleCommon;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DXSBXSKContentListActivity extends BaseActivity {
     private ListView dqsbxskContentListView;
