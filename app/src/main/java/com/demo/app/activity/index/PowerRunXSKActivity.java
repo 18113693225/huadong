@@ -389,13 +389,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         super.onStart();
         EventBus.getDefault().register(this);
     }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        //    EventBus.getDefault().unregister(this);
-    }
-
+    
     @Override
     protected void onDestroy() {
         super.onDestroy();
