@@ -103,7 +103,7 @@ public class PowerRunXSKActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                int count = commonLayout.getChildCount();
+//                int count = commonLayout.getChildCount();
                 /*
                  * if(count>=Constents.devicenum){
 				 * handler.obtainMessage(4).sendToTarget(); }else{
@@ -389,7 +389,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         super.onStart();
         EventBus.getDefault().register(this);
     }
-    
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
