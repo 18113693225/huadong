@@ -108,15 +108,5 @@ public class DXSBXSKContentListActivity extends BaseActivity {
         }, Integer.valueOf(d_id).intValue(), Integer.valueOf(type).intValue());
         return data;
     }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-//        EventBus.getDefault().post(Constents.xserrorcontentList, "list");
-    }
+    
 }
