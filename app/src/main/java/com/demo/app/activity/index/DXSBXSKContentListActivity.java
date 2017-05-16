@@ -32,7 +32,6 @@ public class DXSBXSKContentListActivity extends BaseActivity {
     private int btId;
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
-//			adapter.notifyDataSetChanged();
             adapter.refresh(data);
         }
 
@@ -101,12 +100,11 @@ public class DXSBXSKContentListActivity extends BaseActivity {
 //                    Constents.xscontentList.add(m1);
                     handler.obtainMessage().sendToTarget();
                 } catch (JSONException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
         }, Integer.valueOf(d_id).intValue(), Integer.valueOf(type).intValue());
         return data;
     }
-    
+
 }
