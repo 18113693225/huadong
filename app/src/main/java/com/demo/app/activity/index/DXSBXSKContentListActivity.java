@@ -34,8 +34,6 @@ public class DXSBXSKContentListActivity extends BaseActivity {
         public void handleMessage(android.os.Message msg) {
             adapter.refresh(data);
         }
-
-        ;
     };
 
     @Override
@@ -73,7 +71,6 @@ public class DXSBXSKContentListActivity extends BaseActivity {
 
             @Override
             public void callback(String result) {
-                // TODO Auto-generated method stub
                 JSONObject json;
                 try {
                     json = new JSONObject(result);
@@ -86,18 +83,6 @@ public class DXSBXSKContentListActivity extends BaseActivity {
                         map.put("select_val", 1);
                         data.add(map);
                     }
-//					Constents.xscontentList.add(data);
-//                    Map<Object, Object> m1 = new HashMap<Object, Object>();
-//                    m1.put("deviceId", Constents.current_device_id);
-//                    m1.put("result", data);
-                    /*for(int j=0;j<Constents.xscontentList.size();j++){
-                        //去除相同设备ID的巡视内容
-						if(Constents.xscontentList.get(j).get("deviceId").equals(Constents.current_device_id)){
-							Constents.xscontentList.remove(Constents.xscontentList.get(j));
-						}
-					}*/
-                    //重新添加
-//                    Constents.xscontentList.add(m1);
                     handler.obtainMessage().sendToTarget();
                 } catch (JSONException e) {
                     e.printStackTrace();
