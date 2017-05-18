@@ -76,6 +76,7 @@ public class Constents {
      */
     public static List<Map<Object, Object>> xserrorcontentList = new ArrayList<Map<Object, Object>>();
     public static Map<String, ArrayList<Map<Object, Object>>> contentListMap = new HashMap<String, ArrayList<Map<Object, Object>>>();
+    public static Map<String, ArrayList<Map<Object, Object>>> errListMap = new HashMap<String, ArrayList<Map<Object, Object>>>();
     /**
      * 存放所有巡视卡(上传使用)
      */

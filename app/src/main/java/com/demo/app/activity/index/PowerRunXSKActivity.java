@@ -94,6 +94,7 @@ public class PowerRunXSKActivity extends BaseActivity {
         Constents.xscontentList.clear();
         Constents.xserrorcontentList.clear();
         Constents.contentListMap.clear();
+        Constents.errListMap.clear();
         Constents.devicenum = 0;
         sp = getSharedPreferences(Constents.SHARE_CONFIG, Context.MODE_PRIVATE);
         commonLayout = (LinearLayout) this.findViewById(R.id.pr_xsk_commonLayout);
@@ -243,9 +244,16 @@ public class PowerRunXSKActivity extends BaseActivity {
         ll.setVisibility(View.VISIBLE);
         Button errBt = (Button) child.findViewById(R.id.err_bt);
         errBt.setOnClickListener(new OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(PowerRunXSKActivity.this, ErrContentListActivity.class);
+                int btId = commonLayout.indexOfChild(child);
+                Intent i = new Intent();
+                i.putExtra("did", xiangmu);
+                i.putExtra("type", LBs.get(btId));
+                i.putExtra("btId", btId);
+                i.setClass(PowerRunXSKActivity.this, ErrContentListActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
             }
         });

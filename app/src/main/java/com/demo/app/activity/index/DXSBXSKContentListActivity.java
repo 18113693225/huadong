@@ -1,8 +1,6 @@
 package com.demo.app.activity.index;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ListView;
@@ -41,10 +39,9 @@ public class DXSBXSKContentListActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dqsbxsk_content_list_layout);
-        SharedPreferences sp = getSharedPreferences(Constents.SHARE_CONFIG,
-                Context.MODE_PRIVATE);
-
-        int uid = sp.getInt("userId", -1);
+//        SharedPreferences sp = getSharedPreferences(Constents.SHARE_CONFIG,
+//                Context.MODE_PRIVATE);
+//        int uid = sp.getInt("userId", -1);
         String title = "巡视内容";
         TitleCommon.setTitle(this, null, title, null, true);
 
