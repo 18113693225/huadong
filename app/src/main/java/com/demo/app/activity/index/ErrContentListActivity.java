@@ -26,6 +26,7 @@ public class ErrContentListActivity extends BaseActivity {
     private ListView dqsbxskContentListView;
     private XSErrAdapter adapter;
     private ArrayList<Map<Object, Object>> data;
+    private ArrayList<String> ids = new ArrayList<>();
     private String d_id;
     private String type;
     private int btId;
@@ -37,7 +38,6 @@ public class ErrContentListActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dqsbxsk_content_list_layout);
 
@@ -51,9 +51,17 @@ public class ErrContentListActivity extends BaseActivity {
 
         dqsbxskContentListView = (ListView) this
                 .findViewById(R.id.dqsbxskContentListView);
-
+        ids.clear();
         if (!Constents.errListMap.containsKey(type)) {
-            adapter = new XSErrAdapter(this, getData(), Integer.valueOf(type).intValue());
+            if (Constents.contentListMap.containsKey(type)) {
+                for (int i = 0; i < Constents.contentListMap.get(type).size(); i++) {
+                    if (Constents.contentListMap.get(type).get(i).get("select_val") != 1) {
+                        ids.add(Constents.contentListMap.get(type).get(i).get("device_content_id").toString());
+                    }
+                }
+                adapter = new XSErrAdapter(this, getData(), Integer.valueOf(type).intValue());
+            }
+
         } else {
             adapter = new XSErrAdapter(this, Constents.errListMap.get(type), btId);
         }
