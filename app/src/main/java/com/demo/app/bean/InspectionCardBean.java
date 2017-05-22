@@ -1,7 +1,6 @@
 package com.demo.app.bean;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -34,6 +33,30 @@ public class InspectionCardBean extends DateBean {
     private String equipment_check_time = "";
     private String longitude = "";
     private String latitude = "";
+    /**
+     * 设备内容集合
+     * <p>
+     * map 对应参数值  :
+     * device_content_id 设备内容ID
+     * select_val 选择值  0：异常  1：正常
+     */
+    private List<Map<Object, Object>> deviceContentList = new ArrayList<Map<Object, Object>>();
+    private List<Map<Object, Object>> errContentList = new ArrayList<Map<Object, Object>>();
+    // 设备编号
+    private String equipment_number = "";
+    // 巡视结果   0:异常  1：正常
+    private int inspection_result;
+    //巡视图片
+    private List<String> photos = new ArrayList<>();
+    // 巡视内容
+    private String inspection_content = "";
+    //设备内容集合
+    // GPS定位
+    private String GPS = "";
+    //缺陷类别 ， 危机缺陷  、重大缺陷 、 一般缺陷
+    private String defect_type = "";
+    //是否有图片
+    private int imgNumber;
 
     public String getEquipment_check_time() {
         return equipment_check_time;
@@ -58,31 +81,14 @@ public class InspectionCardBean extends DateBean {
     public void setLatitude(String latitude) {
         this.latitude = latitude;
     }
-    //设备内容集合
-    /**
-     * 设备内容集合
-     * <p>
-     * map 对应参数值  :
-     * device_content_id 设备内容ID
-     * select_val 选择值  0：异常  1：正常
-     */
-    private List<Map<Object, Object>> deviceContentList = new ArrayList<Map<Object, Object>>();
-    // 设备编号
-    private String equipment_number = "";
-    // 巡视结果   0:异常  1：正常
-    private int inspection_result;
-    //巡视图片
-    private List<String> photos = new ArrayList<>();
-    // 巡视内容
-    private String inspection_content = "";
-    // GPS定位
-    private String GPS = "";
 
-    //缺陷类别 ， 危机缺陷  、重大缺陷 、 一般缺陷
-    private String defect_type = "";
+    public List<Map<Object, Object>> getErrContentList() {
+        return errContentList;
+    }
 
-    //是否有图片
-    private int imgNumber;
+    public void setErrContentList(List<Map<Object, Object>> errContentList) {
+        this.errContentList = errContentList;
+    }
 
     public int getImgNumber() {
         return imgNumber;
@@ -134,6 +140,10 @@ public class InspectionCardBean extends DateBean {
 
     public int getDevice_id() {
         return device_id;
+    }
+
+    public void setDevice_id(int device_id) {
+        this.device_id = device_id;
     }
 
     public void setDevice_name(int device_id) {
@@ -210,10 +220,6 @@ public class InspectionCardBean extends DateBean {
 
     public void setDeviceContentList(List<Map<Object, Object>> deviceContentList) {
         this.deviceContentList = deviceContentList;
-    }
-
-    public void setDevice_id(int device_id) {
-        this.device_id = device_id;
     }
 
     public String getProject_item() {

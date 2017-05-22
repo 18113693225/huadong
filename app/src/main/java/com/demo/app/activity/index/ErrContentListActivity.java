@@ -30,6 +30,7 @@ public class ErrContentListActivity extends BaseActivity {
     private String d_id;
     private String type;
     private int btId;
+
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             adapter.refresh(data);
@@ -55,7 +56,7 @@ public class ErrContentListActivity extends BaseActivity {
         if (!Constents.errListMap.containsKey(type)) {
             if (Constents.contentListMap.containsKey(type)) {
                 for (int i = 0; i < Constents.contentListMap.get(type).size(); i++) {
-                    if (Constents.contentListMap.get(type).get(i).get("select_val") != 1) {
+                    if ((int) Constents.contentListMap.get(type).get(i).get("select_val") != 1) {
                         ids.add(Constents.contentListMap.get(type).get(i).get("device_content_id").toString());
                     }
                 }
