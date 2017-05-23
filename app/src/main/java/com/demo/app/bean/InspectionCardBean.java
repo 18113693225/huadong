@@ -42,6 +42,7 @@ public class InspectionCardBean extends DateBean {
      */
     private List<Map<Object, Object>> deviceContentList = new ArrayList<Map<Object, Object>>();
     private List<Map<Object, Object>> errContentList = new ArrayList<Map<Object, Object>>();
+    private String errContent = "";
     // 设备编号
     private String equipment_number = "";
     // 巡视结果   0:异常  1：正常
@@ -57,6 +58,14 @@ public class InspectionCardBean extends DateBean {
     private String defect_type = "";
     //是否有图片
     private int imgNumber;
+
+    public String getErrContent() {
+        return errContent;
+    }
+
+    public void setErrContent(String errContent) {
+        this.errContent = errContent;
+    }
 
     public String getEquipment_check_time() {
         return equipment_check_time;
