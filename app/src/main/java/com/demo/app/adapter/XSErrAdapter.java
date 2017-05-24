@@ -25,16 +25,9 @@ public class XSErrAdapter extends BaseAdapter {
 
 
     public XSErrAdapter(Context context, ArrayList<Map<Object, Object>> datas, int btId) {
-
-//        if (Constents.xserrorcontentList.size() != 0) {
-//            this.datas = Constents.xserrorcontentList;
-//            this.context = context;
-//        } else {
         this.context = context;
         this.datas = datas;
         this.btId = btId;
-        //    }
-
 
     }
 
@@ -59,13 +52,6 @@ public class XSErrAdapter extends BaseAdapter {
     }
 
     public void refresh(List<Map<Object, Object>> list) {
-//        if (Constents.xserrorcontentList.size() == 0) {
-//            datas = list;
-//            Constents.xserrorcontentList.clear();
-//        } else {
-//            datas = Constents.xserrorcontentList;
-//        }
-
         notifyDataSetChanged();
     }
 
