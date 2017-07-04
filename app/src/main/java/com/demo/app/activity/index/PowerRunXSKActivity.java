@@ -102,14 +102,7 @@ public class PowerRunXSKActivity extends BaseActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-//                int count = commonLayout.getChildCount();
-                /*
-                 * if(count>=Constents.devicenum){
-				 * handler.obtainMessage(4).sendToTarget(); }else{
-				 */
                 addDevice();
-                // }
             }
         });
         addDevice();
