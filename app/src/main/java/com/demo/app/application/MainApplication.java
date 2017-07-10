@@ -2,10 +2,11 @@ package com.demo.app.application;
 
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.os.Build;
+import android.os.StrictMode;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.demo.app.util.CustomConstants;
-import com.squareup.leakcanary.LeakCanary;
 
 /**
  * @author Administrator
@@ -48,6 +49,10 @@ public class MainApplication extends Application {
 //    		System.out.println("++++++++++++app start service ++++++++++++++++++");
 //	    	startService(new Intent(this, BackgroundService.class));
 //	    }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+            StrictMode.setVmPolicy(builder.build());
+        }
     }
 
     private void removeTempFromPref() {
