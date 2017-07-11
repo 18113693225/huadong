@@ -1,25 +1,5 @@
 package com.demo.app.view;
 
-import java.io.File;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
-import com.alibaba.fastjson.JSON;
-import com.demo.app.R;
-import com.demo.app.activity.index.PowerRunXSKActivity;
-import com.demo.app.adapter.ImagePublishAdapter;
-import com.demo.app.api.ApiService;
-import com.demo.app.api.service.CardService;
-import com.demo.app.bean.ImageItem;
-import com.demo.app.util.Constents;
-import com.demo.app.util.CustomConstants;
-import com.demo.app.util.IntentConstants;
-import com.demo.app.util.PreferenceUtils;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -46,10 +26,29 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.demo.app.R;
+import com.demo.app.activity.index.PowerRunXSKActivity;
+import com.demo.app.adapter.ImagePublishAdapter;
+import com.demo.app.api.ApiService;
+import com.demo.app.api.service.CardService;
+import com.demo.app.bean.ImageItem;
+import com.demo.app.util.Constents;
+import com.demo.app.util.CustomConstants;
+import com.demo.app.util.IntentConstants;
+import com.demo.app.util.PreferenceUtils;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.simple.eventbus.EventBus;
+
+import java.io.File;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
@@ -60,13 +59,15 @@ import retrofit2.Response;
 
 public class PublishActivity extends Activity {
     private static final String TAG = "PublishActivity";
+    private static final int TAKE_PICTURE = 0x000000;
+    public static List<ImageItem> mDataList = new ArrayList<>();
     private GridView mGridView;
     private ImagePublishAdapter mAdapter;
     private TextView sendTv;
-    public static List<ImageItem> mDataList = new ArrayList<>();
     private SharedPreferences sp;
     private CardService cardService;
     private ProgressDialog dialog;
+    private String path = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -234,6 +235,41 @@ public class PublishActivity extends Activity {
         return path;
     }
 
+    public void takePhoto() {
+        Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        File vFile = new File(Environment.getExternalStorageDirectory() + "/myimage/",
+                String.valueOf(System.currentTimeMillis()) + ".jpg");
+        if (!vFile.exists()) {
+            File vDirPath = vFile.getParentFile();
+            vDirPath.mkdirs();
+        } else {
+            if (vFile.exists()) {
+                vFile.delete();
+            }
+        }
+        path = vFile.getPath();
+        Uri cameraUri = Uri.fromFile(vFile);
+        openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraUri);
+        startActivityForResult(openCameraIntent, TAKE_PICTURE);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case TAKE_PICTURE:
+                if (mDataList.size() < CustomConstants.MAX_IMAGE_SIZE && resultCode == -1 && !TextUtils.isEmpty(path)) {
+                    ImageItem item = new ImageItem();
+                    item.sourcePath = path;
+                    mDataList.add(item);
+                }
+                break;
+        }
+    }
+
+    private void notifyDataChanged() {
+        mAdapter.notifyDataSetChanged();
+    }
+
     public class PopupWindows extends PopupWindow {
 
         public PopupWindows(Context mContext, View parent) {
@@ -275,44 +311,6 @@ public class PublishActivity extends Activity {
             });
 
         }
-    }
-
-    private static final int TAKE_PICTURE = 0x000000;
-    private String path = "";
-
-    public void takePhoto() {
-        Intent openCameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        File vFile = new File(Environment.getExternalStorageDirectory() + "/myimage/",
-                String.valueOf(System.currentTimeMillis()) + ".jpg");
-        if (!vFile.exists()) {
-            File vDirPath = vFile.getParentFile();
-            vDirPath.mkdirs();
-        } else {
-            if (vFile.exists()) {
-                vFile.delete();
-            }
-        }
-        path = vFile.getPath();
-        Uri cameraUri = Uri.fromFile(vFile);
-        openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraUri);
-        startActivityForResult(openCameraIntent, TAKE_PICTURE);
-    }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (requestCode) {
-            case TAKE_PICTURE:
-                if (mDataList.size() < CustomConstants.MAX_IMAGE_SIZE && resultCode == -1 && !TextUtils.isEmpty(path)) {
-                    ImageItem item = new ImageItem();
-                    item.sourcePath = path;
-                    mDataList.add(item);
-                }
-                break;
-        }
-    }
-
-    private void notifyDataChanged() {
-        mAdapter.notifyDataSetChanged();
     }
 
 }
