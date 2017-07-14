@@ -192,7 +192,6 @@ public class QuickRegisterActivity extends BaseActivity implements
                         @Override
                         public void callback(String result) {
                             // TODO Auto-generated method stub
-                            Log.e("regist", result);
 //						TitleCommon.handlerRegist(handler, QuickRegisterActivity.this, result);
                             JSONObject json;
                             try {
