@@ -91,9 +91,6 @@ public class QuickRegisterActivity extends BaseActivity implements
 
     /**
      * 验证手机号码
-     *
-     * @param str
-     * @return
      */
     public static boolean isMobile(String str) {
         Pattern p = null;
@@ -107,7 +104,6 @@ public class QuickRegisterActivity extends BaseActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentViewWithoutTitle(R.layout.quick_register_layout);
         TitleCommon.setTitle(this, null, "快速注册", TabMainActivity.class, true);
@@ -137,7 +133,6 @@ public class QuickRegisterActivity extends BaseActivity implements
 
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
         int id = v.getId();
         switch (id) {
             case R.id.quick_register_getcode:
@@ -150,20 +145,16 @@ public class QuickRegisterActivity extends BaseActivity implements
                         @Override
                         public void callback(String result) {
                             // TODO Auto-generated method stub
-                            Log.e("regist", result);
                             try {
                                 JSONObject json = new JSONObject(result);
                                 String status = json.getString("status");
                                 if ("success".equals(status)) {
-                                    //成功
                                     handler.obtainMessage(0).sendToTarget();
                                     sp.edit().putString("userphone", phoneValue).commit();
                                 } else {
-                                    //失败
                                     handler.obtainMessage(4).sendToTarget();
                                 }
                             } catch (JSONException e) {
-                                // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
                         }
@@ -198,15 +189,12 @@ public class QuickRegisterActivity extends BaseActivity implements
                                 json = new JSONObject(result);
                                 String status = json.getString("status");
                                 if ("success".equals(status)) {
-                                    //成功
                                     handler.obtainMessage(5).sendToTarget();
                                 } else {
-                                    //失败
                                     String message = json.getString("message");
                                     handler.obtainMessage(3, message).sendToTarget();
                                 }
                             } catch (JSONException e) {
-                                // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
                         }
