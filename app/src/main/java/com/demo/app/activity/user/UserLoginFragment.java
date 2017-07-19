@@ -1,41 +1,5 @@
 package com.demo.app.activity.user;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.demo.app.R;
-import com.demo.app.activity.TabMainActivity;
-import com.demo.app.activity.UpdateActivity;
-import com.demo.app.network.NetworkData;
-import com.demo.app.network.NetworkResponceFace;
-import com.demo.app.util.Constents;
-import com.demo.app.util.TitleCommon;
-import com.demo.app.view.CustomeImageTextButton;
-import com.sina.weibo.sdk.api.TextObject;
-import com.sina.weibo.sdk.api.WebpageObject;
-import com.sina.weibo.sdk.api.WeiboMultiMessage;
-import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
-import com.sina.weibo.sdk.api.share.SendMultiMessageToWeiboRequest;
-import com.sina.weibo.sdk.api.share.WeiboShareSDK;
-import com.sina.weibo.sdk.utils.Utility;
-import com.tencent.connect.share.QQShare;
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
-import com.tencent.open.utils.ThreadManager;
-import com.tencent.tauth.IUiListener;
-import com.tencent.tauth.Tencent;
-import com.tencent.tauth.UiError;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -65,8 +29,68 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.demo.app.R;
+import com.demo.app.activity.TabMainActivity;
+import com.demo.app.activity.UpdateActivity;
+import com.demo.app.network.NetworkData;
+import com.demo.app.network.NetworkResponceFace;
+import com.demo.app.util.Constents;
+import com.demo.app.util.TitleCommon;
+import com.demo.app.view.CustomeImageTextButton;
+import com.sina.weibo.sdk.api.TextObject;
+import com.sina.weibo.sdk.api.WebpageObject;
+import com.sina.weibo.sdk.api.WeiboMultiMessage;
+import com.sina.weibo.sdk.api.share.IWeiboShareAPI;
+import com.sina.weibo.sdk.api.share.SendMultiMessageToWeiboRequest;
+import com.sina.weibo.sdk.api.share.WeiboShareSDK;
+import com.sina.weibo.sdk.utils.Utility;
+import com.tencent.connect.share.QQShare;
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
+import com.tencent.mm.sdk.openapi.IWXAPI;
+import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.open.utils.ThreadManager;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class UserLoginFragment extends Fragment implements OnClickListener, OnItemClickListener {
 
+    public static final int SINA_SHARE_WAY_WEBPAGE = 3;
+    public static final String SCOPE = "email,direct_messages_read,direct_messages_write,"
+            + "friendships_groups_read,friendships_groups_write,statuses_to_me_read," + "follow_app_official_microblog,"
+            + "invitation_write";
+    IWeiboShareAPI mWeiboShareAPI = null;
+    IUiListener qqShareListener = new IUiListener() {
+        @Override
+        public void onCancel() {
+            // Toast.makeText(getActivity(), "取消分享！",
+            // Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onComplete(Object response) {
+            // TODO Auto-generated method stub
+            Toast.makeText(getActivity(), "分享完成！", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onError(UiError e) {
+            // TODO Auto-generated method stub
+            Toast.makeText(getActivity(), "分享失败！", Toast.LENGTH_SHORT).show();
+        }
+    };
     private View loginView;
     private TextView registerText, forgetPwText, login_show_name;
     private EditText userNameText, userPasswordText;
@@ -77,11 +101,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
     private ListView personListView;
     private CheckBox loginCheckBox;
     private SharedPreferences sp;
-    public static final int SINA_SHARE_WAY_WEBPAGE = 3;
-    IWeiboShareAPI mWeiboShareAPI = null;
-    public static final String SCOPE = "email,direct_messages_read,direct_messages_write,"
-            + "friendships_groups_read,friendships_groups_write,statuses_to_me_read," + "follow_app_official_microblog,"
-            + "invitation_write";
     private int[] icon = {R.drawable.icon_setting, R.drawable.icon_inspection_service, R.drawable.icn_work_log,
             R.drawable.icon_plan, R.drawable.icon_contact, R.drawable.icon_recommed, R.drawable.icon_update,
             R.drawable.icon_modify, R.drawable.icon_psd_set, R.drawable.icon_modify};
@@ -119,6 +138,19 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
         ;
 
     };
+
+    /**
+     * 验证手机号码
+     */
+    public static boolean isMobile(String str) {
+        Pattern p = null;
+        Matcher m = null;
+        boolean b = false;
+        p = Pattern.compile("^[1][3,4,5,8][0-9]{9}$"); // 验证手机号
+        m = p.matcher(str);
+        b = m.matches();
+        return b;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -166,7 +198,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // TODO Auto-generated method stub
                 sp.edit().putBoolean("rememberPassword", isChecked).commit();
                 if (!isChecked) {
                     sp.edit().putString("userphone", "").commit();
@@ -277,7 +308,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
                                         handler.obtainMessage(0, 3).sendToTarget();
                                     }
                                 } catch (JSONException e) {
-                                    // TODO Auto-generated catch block
                                     e.printStackTrace();
                                     handler.obtainMessage(0, 1).sendToTarget();
                                 }
@@ -300,22 +330,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
             default:
                 break;
         }
-    }
-
-    /**
-     * 验证手机号码
-     *
-     * @param str
-     * @return
-     */
-    public static boolean isMobile(String str) {
-        Pattern p = null;
-        Matcher m = null;
-        boolean b = false;
-        p = Pattern.compile("^[1][3,4,5,8][0-9]{9}$"); // 验证手机号
-        m = p.matcher(str);
-        b = m.matches();
-        return b;
     }
 
     public List<Map<String, Object>> getData() {
@@ -390,11 +404,8 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 IWXAPI api = WXAPIFactory.createWXAPI(getActivity(), Constents.Wx_APP_ID, true);
                 api.registerApp(Constents.Wx_APP_ID);
-                // WXTextObject textObj = new WXTextObject();
-                // textObj.text = "打造中国电力物业第一品牌";
                 WXWebpageObject webpage = new WXWebpageObject();
                 webpage.webpageUrl = "http://app.qq.com/#id=detail&appid=1105648833";
                 Bitmap thumb = BitmapFactory.decodeResource(getResources(), R.drawable.logoo);
@@ -448,11 +459,9 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
         if (supportApiLevel >= 10351) {
             weiboMessage.mediaObject = getWebpageObj();
             weiboMessage.textObject = getTextObj();
-
             SendMultiMessageToWeiboRequest request = new SendMultiMessageToWeiboRequest();
             request.transaction = String.valueOf(System.currentTimeMillis());
             request.multiMessage = weiboMessage;
-
             mWeiboShareAPI.sendRequest(getActivity(), request);
         }
 
@@ -466,8 +475,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
     /**
      * 创建多媒体（网页）消息对象。
-     *
-     * @return 多媒体（网页）消息对象。
      */
     private WebpageObject getWebpageObj() {
         WebpageObject mediaObject = new WebpageObject();
@@ -488,8 +495,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
         // 其中APP_ID是分配给第三方应用的appid，类型为String。
         final Tencent mTencent = Tencent.createInstance(Constents.Qq_APP_ID, getActivity());
         // 1.4版本:此处需新增参数，传入应用程序的全局context，可通过activity的getApplicationContext方法获取
-
-        // TODO Auto-generated method stub
         final Bundle params = new Bundle();
         // 分享的标题
         params.putString(QQShare.SHARE_TO_QQ_TITLE, "华东电力物业");
@@ -511,24 +516,4 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
             }
         });
     }
-
-    IUiListener qqShareListener = new IUiListener() {
-        @Override
-        public void onCancel() {
-            // Toast.makeText(getActivity(), "取消分享！",
-            // Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onComplete(Object response) {
-            // TODO Auto-generated method stub
-            Toast.makeText(getActivity(), "分享完成！", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onError(UiError e) {
-            // TODO Auto-generated method stub
-            Toast.makeText(getActivity(), "分享失败！", Toast.LENGTH_SHORT).show();
-        }
-    };
 }
