@@ -198,7 +198,6 @@ public class PowerRunXSKActivity extends BaseActivity {
 
                         @Override
                         public void callback(String result) {
-                            // TODO Auto-generated method stub
                             JSONObject json;
                             try {
                                 json = new JSONObject(result);
@@ -209,7 +208,6 @@ public class PowerRunXSKActivity extends BaseActivity {
                                     handler.obtainMessage(2).sendToTarget();
                                 }
                             } catch (JSONException e) {
-                                // TODO Auto-generated catch block
                                 e.printStackTrace();
                                 handler.obtainMessage(2).sendToTarget();
 

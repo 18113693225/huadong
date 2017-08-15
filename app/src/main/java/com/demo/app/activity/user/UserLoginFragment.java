@@ -81,13 +81,11 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
         @Override
         public void onComplete(Object response) {
-            // TODO Auto-generated method stub
             Toast.makeText(getActivity(), "分享完成！", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onError(UiError e) {
-            // TODO Auto-generated method stub
             Toast.makeText(getActivity(), "分享失败！", Toast.LENGTH_SHORT).show();
         }
     };
@@ -161,8 +159,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-
         if (null != loginView) {
             ViewGroup parent = (ViewGroup) loginView.getParent();
             if (null != parent) {
@@ -177,7 +173,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
         super.onActivityCreated(savedInstanceState);
         TitleCommon.setTitle(getActivity(), loginView, "用户登陆", TabMainActivity.class, false);
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
@@ -244,7 +239,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
         int id = v.getId();
         switch (id) {
             case R.id.register:
@@ -351,7 +345,6 @@ public class UserLoginFragment extends Fragment implements OnClickListener, OnIt
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-        // TODO Auto-generated method stub
         switch (position) {
             case 0:
                 startActivity(PersonWorkManagerActivity.class);
